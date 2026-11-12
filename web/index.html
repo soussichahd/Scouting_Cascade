@@ -2,47 +2,79 @@
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Scouting Gardien – SIF Mamdani</title>
 <style>
-:root{--navy:#0B1F3A;--navy2:#13294B;--navy3:#1C3760;--ink:#E8EEF8;--mut:#9FB3CF;--good:#2EC4B6;--warn:#E9B949;--bad:#FF7A59;--line:#2A4570}
-*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif;min-width:1280px}
-header{display:flex;align-items:center;gap:24px;padding:10px 20px;background:var(--navy2);border-bottom:1px solid var(--line)}
-header h1{font-size:16px;margin:0;color:var(--good)}nav button{background:none;border:0;color:var(--mut);font:inherit;padding:8px 14px;cursor:pointer;border-bottom:2px solid transparent}
-nav button.on{color:#fff;border-color:var(--good)}main{padding:16px 20px}.grid{display:grid;gap:16px}
-.card{background:var(--navy2);border:1px solid var(--line);border-radius:8px;padding:14px}.card h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
-label{display:block;color:var(--mut);font-size:12px}input,select,button.b{background:var(--navy);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:5px 8px;font:inherit}
-button.b{cursor:pointer;background:var(--navy3)}button.b.pri{background:var(--good);color:#04202a;border-color:var(--good);font-weight:600}button.b.del{color:var(--bad)}
-.slider{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;margin:3px 0}.slider input[type=range]{width:100%;accent-color:var(--good)}
-.big{font-size:44px;font-weight:700}.lvl{font-size:20px;font-weight:600}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mut{color:var(--mut)}
-.bar{height:10px;background:var(--navy);border-radius:5px;overflow:hidden;flex:1}.bar>i{display:block;height:100%;background:var(--good)}
-.row{display:flex;align-items:center;gap:8px;margin:3px 0}table{border-collapse:collapse;width:100%}td,th{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--mut);font-weight:500}
-details{margin:4px 0}summary{cursor:pointer}svg text{fill:var(--mut);font-size:10px}.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;border:1px solid currentColor}
-.scroll{max-height:520px;overflow:auto}.hidden{display:none}.comment{border-left:3px solid var(--good);padding-left:10px}
+:root{--bg:#F3F6FB;--card:#FFFFFF;--head:#0B1F3A;--soft:#EAF0F8;--ink:#14213A;--mut:#5B6B85;--line:#D5DEEB;--good:#0B7F73;--goodbg:#2EC4B6;--warn:#9A6400;--warnbg:#E9B949;--bad:#C2410C;--badbg:#FF7A59;--shadow:0 1px 3px rgba(11,31,58,.08),0 4px 14px rgba(11,31,58,.05)}
+:root[data-theme=dark]{--bg:#0B1F3A;--card:#13294B;--head:#091830;--soft:#1C3760;--ink:#E8EEF8;--mut:#9FB3CF;--line:#2A4570;--good:#2EC4B6;--warn:#E9B949;--bad:#FF8A6B;--shadow:none}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,Segoe UI,Roboto,sans-serif;min-width:1280px}
+header{display:flex;align-items:center;gap:28px;padding:0 24px;background:var(--head);color:#fff;height:56px}
+header h1{font-size:17px;margin:0;color:#fff;white-space:nowrap}header h1 span{color:#2EC4B6}
+nav{display:flex;height:100%}nav button{background:none;border:0;color:#B9C8E0;font:inherit;font-weight:500;padding:0 18px;cursor:pointer;border-bottom:3px solid transparent;height:100%}
+nav button:hover{color:#fff}nav button.on{color:#fff;border-color:#2EC4B6;background:rgba(255,255,255,.07)}
+#ver{margin-left:auto;font-size:11px;color:#8FA6C6;max-width:420px;text-align:right}#theme{background:none;border:1px solid #3A557F;color:#fff;border-radius:6px;padding:4px 10px;cursor:pointer}
+main{padding:20px 24px;max-width:1700px;margin:auto}.grid{display:grid;gap:18px;align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 12px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+.hint{background:var(--soft);border-radius:8px;padding:8px 12px;color:var(--mut);font-size:13px;margin:0 0 14px}
+label{color:var(--mut);font-size:13px}input,select,button.b{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:6px 10px;font:inherit}
+input:focus,select:focus{outline:2px solid #2EC4B6;outline-offset:1px}
+button.b{cursor:pointer;background:var(--soft);font-weight:500}button.b:hover{border-color:#2EC4B6}
+button.b.pri{background:#0B7F73;color:#fff;border-color:#0B7F73;font-weight:600}button.b.pri:hover{background:#096A60}button.b.del{color:var(--bad);padding:2px 8px}
+details.grp{border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0;background:var(--bg)}details.grp>summary{font-size:14px}
+.slider{display:grid;grid-template-columns:140px 1fr 74px;gap:10px;align-items:center;margin:5px 0;font-size:13.5px}.slider input[type=range]{width:100%;accent-color:#0B7F73}
+.big{font-size:56px;font-weight:800;line-height:1}.lvl{font-size:22px;font-weight:700;margin-top:4px}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mut{color:var(--mut)}
+.bar{height:11px;background:var(--soft);border-radius:6px;overflow:hidden;flex:1}.bar>i{display:block;height:100%;background:var(--goodbg);border-radius:6px}
+.row{display:flex;align-items:center;gap:10px;margin:5px 0;flex-wrap:wrap}table{border-collapse:collapse;width:100%}td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:13.5px}th{color:var(--mut);font-weight:600;background:var(--soft);position:sticky;top:0}
+tbody tr:hover td,tr[data-g]:hover td{background:var(--soft)}
+details{margin:6px 0}summary{cursor:pointer;font-weight:500}svg text{fill:var(--mut);font-size:10px}
+.tag{display:inline-block;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:600;border:1px solid currentColor;background:var(--card)}
+.scroll{max-height:560px;overflow:auto;border:1px solid var(--line);border-radius:8px}.hidden{display:none}
+.comment{border-left:4px solid #2EC4B6;padding:6px 14px;font-size:15.5px;line-height:1.6;background:var(--soft);border-radius:0 8px 8px 0}
+.kpi{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}.kpi>div{background:var(--soft);border-radius:8px;padding:8px 12px;flex:1;min-width:140px}.kpi b{display:block;font-size:18px}.kpi span{font-size:12px;color:var(--mut)}
+
+:root{--acc:#374DF5;--bg:#F5F6FA}
+:root[data-theme=dark]{--acc:#7C8CFF;--bg:#12151F;--card:#1B2030;--head:#1B2030;--soft:#252B3F;--line:#2E3550}
+body{background:var(--bg);font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+header{background:var(--card);color:var(--ink);border-bottom:1px solid var(--line);height:60px}
+header h1{color:var(--ink)}header h1 span{color:var(--acc)}
+nav button{color:var(--mut);border-radius:0;font-weight:600}nav button:hover{color:var(--ink)}nav button.on{color:var(--acc);border-color:var(--acc);background:none}
+#ver{color:var(--mut)}#theme{color:var(--ink);border-color:var(--line)}
+.card{border-radius:14px;border:0;box-shadow:0 1px 2px rgba(20,30,60,.06)}
+.card h3{font-size:12px;letter-spacing:.08em}
+button.b.pri{background:var(--acc);border-color:var(--acc)}button.b.pri:hover{background:#2A3BD0}
+.slider input[type=range]{accent-color:var(--acc)}input:focus,select:focus{outline-color:var(--acc)}
+.comment{border-left-color:var(--acc)}
+.rate{display:inline-flex;align-items:center;justify-content:center;min-width:46px;height:30px;padding:0 9px;border-radius:8px;color:#fff;font-weight:800;font-size:15px}
+.hero{display:flex;align-items:center;gap:18px}.hero .rate{min-width:104px;height:104px;border-radius:26px;font-size:42px}
+.hero .meta .lvl{font-size:24px;margin:0}.hero .meta .mut{font-size:13px}
+.attr{display:grid;grid-template-columns:150px 1fr 46px;gap:10px;align-items:center;margin:9px 0}.attr .track{height:8px;border-radius:5px;background:var(--soft);overflow:hidden}.attr .track i{display:block;height:100%;border-radius:5px}
+.attr b.rate{height:26px;min-width:40px;font-size:13px}
+tr[data-g]{cursor:pointer}
 </style></head><body>
-<header><h1>⚽ Scouting Gardien · SIF Mamdani en cascade</h1>
+<header><h1>🧤 Scouting<span>Keeper</span></h1>
 <nav id="nav"><button data-s="eval" class="on">3 · Évaluation</button><button data-s="rules">1 · Règles</button><button data-s="vars">2 · Variables</button><button data-s="gks">Gardiens</button></nav>
-<span class="mut" id="ver" style="margin-left:auto"></span></header>
+<span id="ver"></span><button id="theme" title="Changer de thème">🌓</button></header>
 <main>
 <section id="eval" class="grid" style="grid-template-columns:480px 1fr">
- <div class="card"><h3>Saisie</h3>
+ <div class="card"><h3>1 · Saisie des statistiques</h3><p class="hint">Choisissez un gardien puis cliquez <b>Charger</b>, ou déplacez les curseurs : le résultat se met à jour tout seul.</p>
   <div class="row"><select id="gkSel" style="flex:1"></select><button class="b" id="btnLoad">Charger</button></div>
   <div id="sliders"></div>
   <div class="row" style="margin-top:10px"><button class="b pri" id="btnSave">Enregistrer l'évaluation</button><a id="pdfLink" class="hidden good" target="_blank">📄 Rapport PDF</a></div>
   <div id="msg" class="bad"></div></div>
  <div class="grid">
-  <div class="grid" style="grid-template-columns:1fr 1fr"><div class="card"><h3>Résultat</h3><div id="score"></div><div id="degs"></div><div id="rel"></div></div>
-   <div class="card"><h3>Radar</h3><div style="display:flex;gap:10px"><div id="radar4"></div><div id="radar15"></div></div></div></div>
+  <div class="grid" style="grid-template-columns:1fr 1fr"><div class="card"><h3>2 · Résultat</h3><div id="score"></div><div id="degs"></div><div id="rel"></div></div>
+   <div class="card"><h3>Profil radar</h3><div class="mut" style="font-size:12px;margin-bottom:4px">Haut : 4 sous-scores · Bas : 15 variables (plus loin du centre = plus favorable)</div><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div id="radar4"></div><div id="radar15"></div></div></div></div>
   <div class="card"><h3>Commentaire du scout</h3><div id="comment" class="comment"></div></div>
   <div class="card"><h3>« Et si… » (sensibilité)</h3><div class="row"><select id="sensVar"></select><label>variation</label><input id="sensDelta" type="number" value="5" style="width:80px"><button class="b" id="btnSens">Simuler</button></div><div id="sensOut"></div></div>
-  <div class="card"><h3>Traceur de Mamdani</h3><div id="trace"></div></div></div>
+  <div class="card"><h3>Traceur de Mamdani — comment la note est calculée</h3><p class="hint">Pour chaque système : fuzzification des entrées → règles activées (force = minimum des degrés) → ensemble agrégé → centroïde.</p><div id="trace"></div></div></div>
 </section>
 <section id="rules" class="hidden"><div class="grid" style="grid-template-columns:1fr 380px">
- <div class="card"><h3>Éditeur de règles</h3>
+ <div class="card"><h3>Éditeur de règles</h3><p class="hint">Modifiez une liste déroulante : la ligne passe en « expert ». <b>Enregistrer</b> crée une nouvelle version (l'ancienne est conservée) ; comparez ensuite avec le test A/B.</p>
   <div class="row"><select id="rbSel"></select><label>version</label><select id="rbVer"></select><input id="ruleFilter" placeholder="filtrer…"><button class="b" id="btnAddRule">+ règle</button></div>
   <div id="rbCheck" class="row"></div><div class="scroll" id="ruleTable"></div>
   <div class="row" style="margin-top:8px"><input id="rbComment" placeholder="commentaire de version" style="flex:1"><button class="b pri" id="btnSaveRb">Enregistrer (nouvelle version)</button></div><div id="rbMsg"></div></div>
  <div class="grid"><div class="card"><h3>Générer depuis des poids</h3><div id="genW"></div><button class="b" id="btnGen">Générer la base</button></div>
   <div class="card"><h3>Versions & test A/B</h3><div id="verList"></div><div class="row"><select id="abA"></select><select id="abB"></select><button class="b" id="btnAB">Comparer A/B</button></div><div id="abOut" class="scroll" style="max-height:260px"></div></div></div></div></section>
 <section id="vars" class="hidden"><div class="grid" style="grid-template-columns:320px 1fr"><div class="card"><h3>Variables</h3><div id="varList" class="scroll"></div></div>
- <div class="card"><h3 id="varTitle">Variable</h3><div id="varPlot"></div><div id="varWarn"></div><div id="varTerms"></div><div class="row"><button class="b pri" id="btnSaveVar">Enregistrer</button><span id="varMsg"></span></div></div></div></section>
+ <div class="card"><h3 id="varTitle">Variable</h3><p class="hint">Déplacez les curseurs a, b, c, d de chaque terme : la courbe se met à jour en direct. La ligne pointillée marque la valeur courante.</p><div id="varPlot"></div><div id="varWarn"></div><div id="varTerms"></div><div class="row"><button class="b pri" id="btnSaveVar">Enregistrer</button><span id="varMsg"></span></div></div></div></section>
 <section id="gks" class="hidden"><div class="grid" style="grid-template-columns:1fr 420px"><div class="card"><h3>Shortlist (clic = charger dans l'évaluation)</h3><div class="scroll" id="gkTable" style="max-height:640px"></div></div>
  <div class="grid"><div class="card"><h3>Fiche & historique</h3><div id="gkInfo" class="mut">Sélectionner un gardien</div></div><div class="card"><h3>Profils types (FCM)</h3><div id="profiles"></div></div></div></div></section>
 </main>
@@ -50,16 +82,16 @@ details{margin:4px 0}summary{cursor:pointer}svg text{fill:var(--mut);font-size:1
 const $=s=>document.querySelector(s),api=async(p,o)=>{const r=await fetch(p,o&&{method:o.m||'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o.b)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.detail||r.statusText);return j};
 const f1=x=>(+x).toFixed(1),f2=x=>(+x).toFixed(2);
 function trap(x,p){if(p.length==3)p=[p[0],p[1],p[1],p[2]];const[a,b,c,d]=p;const up=b>a?(x-a)/(b-a):(x>=a?1:0),dn=d>c?(d-x)/(d-c):(x<=d?1:0);return Math.max(0,Math.min(1,up,dn))}
-const lvlCls=l=>l>=5?'good':l>=3?'warn':'bad',lvlIco=l=>l>=5?'▲':l>=3?'●':'▼';
+const rc=v=>v<4?'#E5484D':v<5.5?'#F08A24':v<7?'#E5B800':v<8.5?'#2DB16A':'#1693C9',lvlCls=l=>l>=5?'good':l>=3?'warn':'bad',lvlIco=l=>l>=5?'▲':l>=3?'●':'▼';
 let META,VARS={},cur={},gks=[],curGk=null,lastEval=null,evalTimer;
 const EXTRA=['age','minutes_played','league_visibility'];
-function plot(v,w=560,h=170,markX=null,terms=null){const[lo,hi]=v.range,T=terms||v.terms,cols=['#FF7A59','#E9B949','#2EC4B6','#8FB8FF','#C79BFF','#FFB4D1'];let s=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="${w}" height="${h}" fill="none"/>`;const X=x=>30+(x-lo)/(hi-lo)*(w-45),Y=y=>h-25-y*(h-45);
+function plot(v,w=560,h=170,markX=null,terms=null){const[lo,hi]=v.range,T=terms||v.terms,cols=['#E0572F','#C98A00','#0E9F8E','#3B6FD1','#8E5BD6','#D1427F'];let s=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="${w}" height="${h}" fill="none"/>`;const X=x=>30+(x-lo)/(hi-lo)*(w-45),Y=y=>h-25-y*(h-45);
 T.forEach((t,i)=>{let pts=[];for(let k=0;k<=200;k++){const x=lo+k/200*(hi-lo);pts.push(X(x)+','+Y(trap(x,t.params)))}s+=`<polyline points="${pts}" fill="none" stroke="${cols[i%6]}" stroke-width="2"/><text x="${X(t.params[Math.floor(t.params.length/2)])}" y="${Y(1)-4}" text-anchor="middle" style="fill:${cols[i%6]}">${t.label}</text>`});
 for(let k=0;k<=4;k++){const x=lo+k/4*(hi-lo);s+=`<text x="${X(x)}" y="${h-8}" text-anchor="middle">${+x.toFixed(2)}</text>`}
-if(markX!=null)s+=`<line x1="${X(markX)}" x2="${X(markX)}" y1="${Y(1)}" y2="${Y(0)}" stroke="#fff" stroke-dasharray="3"/>`;return s+'</svg>'}
-function radar(labels,vals,size=210){const n=labels.length,c=size/2,r=size/2-38;const P=(i,k)=>{const a=i/n*2*Math.PI-Math.PI/2;return[c+Math.cos(a)*r*k,c+Math.sin(a)*r*k]};let s=`<svg width="${size}" height="${size}">`;
-[.25,.5,.75,1].forEach(k=>s+=`<polygon points="${labels.map((_,i)=>P(i,k)).join(' ')}" fill="none" stroke="#2A4570"/>`);
-s+=`<polygon points="${vals.map((v,i)=>P(i,Math.max(0,Math.min(1,v))))}" fill="#2EC4B655" stroke="#2EC4B6" stroke-width="2"/>`;labels.forEach((l,i)=>{const[x,y]=P(i,1.2);s+=`<text x="${x}" y="${y}" text-anchor="middle" font-size="9">${l.slice(0,11)}</text>`});return s+'</svg>'}
+if(markX!=null)s+=`<line x1="${X(markX)}" x2="${X(markX)}" y1="${Y(1)}" y2="${Y(0)}" stroke="var(--ink)" stroke-dasharray="3"/>`;return s+'</svg>'}
+function radar(labels,vals,size=210){const n=labels.length,c=size/2,r=size/2-66;const P=(i,k)=>{const a=i/n*2*Math.PI-Math.PI/2;return[c+Math.cos(a)*r*k,c+Math.sin(a)*r*k]};let s=`<svg width="${size}" height="${size}">`;
+[.25,.5,.75,1].forEach(k=>s+=`<polygon points="${labels.map((_,i)=>P(i,k)).join(' ')}" fill="none" stroke="var(--line)"/>`);
+s+=`<polygon points="${vals.map((v,i)=>P(i,Math.max(0,Math.min(1,v))))}" fill="#2EC4B655" stroke="#2EC4B6" stroke-width="2"/>`;labels.forEach((l,i)=>{const[x,y]=P(i,1.2);s+=`<text x="${x}" y="${y}" text-anchor="middle" font-size="10">${l.length>16?l.slice(0,15)+'…':l}</text>`});return s+'</svg>'}
 const norm=(v,x)=>{const t=(x-v.range[0])/(v.range[1]-v.range[0]);return v.inverted?1-t:t};
 
 /* ---------- init ---------- */
@@ -67,8 +99,8 @@ async function init(){META=await api('/meta');const vs=await api('/variables');v
  $('#ver').textContent='versions : '+Object.entries(META.versions).map(([k,v])=>k+' v'+v).join(' · ');
  buildSliders();await loadGks();await evaluate()}
 function buildSliders(){let h='';const groups=META.cascade.nodes.filter(n=>n.id!=META.cascade.final);
- groups.forEach(n=>{h+=`<details open><summary><b>${VARS[n.output].label}</b></summary>`+n.inputs.map(sl).join('')+'</details>'});
- h+='<details open><summary><b>Contexte</b></summary>'+EXTRA.map(sl).join('')+'</details>';$('#sliders').innerHTML=h;
+ groups.forEach(n=>{h+=`<details class="grp" open><summary><b>${VARS[n.output].label}</b></summary>`+n.inputs.map(sl).join('')+'</details>'});
+ h+='<details class="grp" open><summary><b>Contexte (âge, temps de jeu, ligue)</b></summary>'+EXTRA.map(sl).join('')+'</details>';$('#sliders').innerHTML=h;
  $('#sensVar').innerHTML=META.inputs.filter(v=>!EXTRA.includes(v.id)).map(v=>`<option value="${v.id}">${v.label}</option>`).join('');
  document.querySelectorAll('#sliders input').forEach(i=>i.oninput=e=>{const id=i.dataset.id;cur[id]=+i.value;document.querySelectorAll(`[data-id="${id}"]`).forEach(o=>{if(o!==i)o.value=i.value});clearTimeout(evalTimer);evalTimer=setTimeout(evaluate,120)})}
 function sl(id){const v=VARS[id],[lo,hi]=v.range,step=hi-lo<=1?0.01:hi-lo<=10?0.1:1;if(cur[id]==null)cur[id]=+((lo+hi)/2).toFixed(2);
@@ -79,17 +111,17 @@ function payload(extra={}){const inputs={};META.inputs.forEach(v=>inputs[v.id]=c
 /* ---------- évaluation ---------- */
 async function evaluate(){try{$('#msg').textContent='';const r=await api('/evaluations',{b:payload()});lastEval=r;render(r)}catch(e){$('#msg').textContent='⚠ '+e.message}}
 function render(r){const f=r.final,l=f.level;
- $('#score').innerHTML=`<div class="big ${lvlCls(l)}">${f1(f.score)}<span class="mut" style="font-size:18px"> /100</span></div><div class="lvl ${lvlCls(l)}">${lvlIco(l)} ${f.level_label}</div>`;
- const sub=Object.entries(r.subscores).map(([k,s])=>`<div class="row"><span style="width:170px">${VARS[k].label.replace('Sous-score ','')}</span><div class="bar"><i style="width:${s.value*10}%"></i></div><b>${f1(s.value)}</b></div>`).join('');
- $('#degs').innerHTML='<div style="margin-top:10px">'+sub+'</div><div class="mut" style="margin-top:8px">Degrés d\'appartenance aux 6 niveaux :</div>'+Object.entries(f.degrees).map(([k,d])=>`<div class="row"><span style="width:70px">${k.replace('niveau','Niveau ')}</span><div class="bar"><i style="width:${d*100}%;background:var(--warn)"></i></div><span>${f2(d)}</span></div>`).join('');
- const rel=r.reliability,ap=r.age_potential;$('#rel').innerHTML=`<div style="margin-top:8px"><b>Fiabilité</b> ${f2(rel.index)} <span class="tag ${rel.index>=.7?'good':rel.index>=.4?'warn':'bad'}">${rel.index>=.7?'✔ haute':rel.index>=.4?'● moyenne':'▼ faible'}</span> · note ± ${f1(rel.margin)} (${f1(Math.max(0,f.score-rel.margin))} – ${f1(Math.min(100,f.score+rel.margin))})<br><b>Valeur immédiate</b> ${f1(ap.immediate)} · <b>Potentiel futur</b> ${f1(ap.potential)}</div>`;
- const sk=Object.keys(r.subscores);$('#radar4').innerHTML=radar(sk.map(k=>VARS[k].label.replace('Sous-score ','')),sk.map(k=>r.subscores[k].value/10));
- const ins=META.inputs.filter(v=>!EXTRA.includes(v.id));$('#radar15').innerHTML=radar(ins.map(v=>v.label),ins.map(v=>norm(v,cur[v.id])),240);
+ $('#score').innerHTML=`<div class="hero"><div class="rate" style="background:${rc(f.score/10)}">${f1(f.score)}</div><div class="meta"><div class="lvl ${lvlCls(l)}">${lvlIco(l)} ${f.level_label}</div><div class="mut">Note globale sur 100</div></div></div>`;
+ const sub=Object.entries(r.subscores).map(([k,s])=>`<div class="attr"><span>${VARS[k].label.replace('Sous-score ','')}</span><div class="track"><i style="width:${s.value*10}%;background:${rc(s.value)}"></i></div><b class="rate" style="background:${rc(s.value)}">${f1(s.value)}</b></div>`).join('');
+ $('#degs').innerHTML='<div style="margin-top:16px">'+sub+'</div><div class="mut" style="margin:14px 0 4px">Appartenance aux 6 niveaux</div>'+Object.entries(f.degrees).map(([k,d])=>`<div class="row" style="margin:2px 0"><span style="width:70px;font-size:13px">${k.replace('niveau','Niveau ')}</span><div class="bar"><i style="width:${d*100}%;background:var(--acc)"></i></div><span style="font-size:13px">${f2(d)}</span></div>`).join('');
+ const rel=r.reliability,ap=r.age_potential;$('#rel').innerHTML=`<div class="kpi"><div><span>Fiabilité</span><b>${f2(rel.index)} <span class="tag ${rel.index>=.7?'good':rel.index>=.4?'warn':'bad'}">${rel.index>=.7?'✔ haute':rel.index>=.4?'● moyenne':'▼ faible'}</span></b></div><div><span>Marge d\'incertitude</span><b>± ${f1(rel.margin)}</b></div><div><span>Valeur immédiate</span><b>${f1(ap.immediate)}</b></div><div><span>Potentiel futur</span><b>${f1(ap.potential)}</b></div></div>`;
+ const sk=Object.keys(r.subscores);$('#radar4').innerHTML=radar(sk.map(k=>VARS[k].label.replace('Sous-score ','')),sk.map(k=>r.subscores[k].value/10),340);
+ const ins=META.inputs.filter(v=>!EXTRA.includes(v.id));$('#radar15').innerHTML=radar(ins.map(v=>v.label),ins.map(v=>norm(v,cur[v.id])),400);
  $('#comment').textContent=r.comment;
  $('#trace').innerHTML=Object.entries(r.trace).map(([nid,t])=>{const n=META.cascade.nodes.concat(META.cascade.parallel||[]).find(x=>x.id==nid);const out=VARS[n.output];
   const deg=Object.entries(t.degrees).map(([vid,d])=>{const v=VARS[vid];const x=cur[v.source||v.id]??r.subscores[vid]?.value;return `<tr><td>${v.label}</td><td>${f2(x??0)}</td><td>${Object.entries(d).map(([k,m])=>`${v.terms.find(t=>t.id==k).label} <b>${f2(m)}</b>`).join(' · ')}</td></tr>`}).join('');
   const fired=t.fired_rules.slice(0,8).map(x=>`<tr><td>${x.id}</td><td>SI ${Object.entries(x.if).map(([a,b])=>VARS[a].label+' = '+VARS[a].terms.find(t=>t.id==b).label).join(' ET ')}</td><td>→ ${out.terms.find(t=>t.id==Object.values(x.then)[0]).label}</td><td><b>${f2(x.strength)}</b></td></tr>`).join('');
-  const agg=`<svg width="460" height="110">${(()=>{const z=t.z,a=t.aggregated,[lo,hi]=out.range,X=v=>10+(v-lo)/(hi-lo)*440,Y=v=>100-v*90;return `<polygon points="${z.map((q,i)=>X(q)+','+Y(a[i]))} ${X(hi)},100 ${X(lo)},100" fill="#2EC4B655" stroke="#2EC4B6"/><line x1="${X(t.centroid)}" x2="${X(t.centroid)}" y1="5" y2="100" stroke="#fff" stroke-dasharray="3"/><text x="${X(t.centroid)+4}" y="14">centroïde ${f2(t.centroid)}</text>`})()}</svg>`;
+  const agg=`<svg width="460" height="110">${(()=>{const z=t.z,a=t.aggregated,[lo,hi]=out.range,X=v=>10+(v-lo)/(hi-lo)*440,Y=v=>100-v*90;return `<polygon points="${z.map((q,i)=>X(q)+','+Y(a[i]))} ${X(hi)},100 ${X(lo)},100" fill="#2EC4B655" stroke="#2EC4B6"/><line x1="${X(t.centroid)}" x2="${X(t.centroid)}" y1="5" y2="100" stroke="var(--ink)" stroke-dasharray="3"/><text x="${X(t.centroid)+4}" y="14">centroïde ${f2(t.centroid)}</text>`})()}</svg>`;
   return `<details ${nid==META.cascade.final?'open':''}><summary><b>${out.label}</b> → ${f2(t.centroid)} <span class="mut">(${t.fired_rules.length} règles activées)</span></summary><table><tr><th>Entrée</th><th>Valeur</th><th>Fuzzification</th></tr>${deg}</table><table><tr><th>Règle</th><th>Condition</th><th>Sortie</th><th>Force</th></tr>${fired}</table>${agg}</details>`}).join('')}
 $('#btnSave').onclick=async()=>{if(!curGk)return $('#msg').textContent='Choisir un gardien dans la liste, puis Charger.';try{const r=await api('/evaluations',{b:payload({goalkeeper_id:curGk,save:true})});$('#pdfLink').href=`/evaluations/${r.evaluation_id}/report.pdf`;$('#pdfLink').classList.remove('hidden');$('#msg').innerHTML='<span class="good">✔ Évaluation enregistrée (#'+r.evaluation_id+')</span>';showGk(curGk)}catch(e){$('#msg').textContent='⚠ '+e.message}};
 $('#btnLoad').onclick=()=>pickGk($('#gkSel').value);
@@ -97,11 +129,11 @@ $('#btnSens').onclick=async()=>{const r=await api('/evaluations/sensitivity',{b:
 
 /* ---------- gardiens ---------- */
 async function loadGks(){gks=await api('/goalkeepers');$('#gkSel').innerHTML=gks.map(g=>`<option value="${g.id}">${g.name} · ${f1(g.score)}</option>`).join('');
- $('#gkTable').innerHTML=`<table><tr><th>Nom</th><th>Club</th><th>Âge</th><th>Note</th><th>Note expert</th></tr>`+gks.sort((a,b)=>b.score-a.score).map(g=>`<tr style="cursor:pointer" data-g="${g.id}"><td>${g.name}</td><td>${g.club}</td><td>${g.age}</td><td><b>${f1(g.score)}</b></td><td class="mut">${g.expert_note??'–'}</td></tr>`).join('')+'</table>';
+ $('#gkTable').innerHTML=`<table><tr><th>Nom</th><th>Club</th><th>Âge</th><th>Note</th><th>Note expert</th></tr>`+gks.sort((a,b)=>b.score-a.score).map(g=>`<tr style="cursor:pointer" data-g="${g.id}"><td>${g.name}</td><td>${g.club}</td><td>${g.age}</td><td><span class="rate" style="background:${rc(g.score/10)}">${f1(g.score)}</span></td><td class="mut">${g.expert_note??'–'}</td></tr>`).join('')+'</table>';
  document.querySelectorAll('[data-g]').forEach(t=>t.onclick=()=>{showGk(t.dataset.g)})}
 function pickGk(id){const g=gks.find(x=>x.id==id);curGk=id;$('#gkSel').value=id;setInputs({...g.stats,age:g.age,minutes_played:g.minutes_played,league_visibility:g.league_visibility});evaluate()}
 async function showGk(id){const g=gks.find(x=>x.id==id),ev=await api(`/goalkeepers/${id}/evaluations`),sim=await api('/goalkeepers/similar',{b:{goalkeeper_id:id,k:5}});
- $('#gkInfo').innerHTML=`<b>${g.name}</b> · ${g.club} · ${g.age} ans<br><button class="b" onclick="pickGk('${id}');show('eval')">Évaluer ce gardien</button><h4>Historique</h4>`+(ev.length?`<table>`+ev.map(e=>`<tr><td>${e.created.replace('T',' ')}</td><td><b>${f1(e.output.final.score)}</b> ${e.output.final.level_label}</td><td><a class="good" target="_blank" href="/evaluations/${e.id}/report.pdf">PDF</a></td></tr>`).join('')+'</table>':'<span class="mut">aucune évaluation enregistrée</span>')+`<h4>Gardiens similaires (cosinus, 15 variables)</h4><table>`+sim.map(s=>`<tr><td>${s.name}</td><td>${f2(s.distance)}</td></tr>`).join('')+'</table>'}
+ $('#gkInfo').innerHTML=`<b>${g.name}</b> · ${g.club} · ${g.age} ans<br><button class="b" onclick="pickGk('${id}');show('eval')">Évaluer ce gardien</button><h4>Historique</h4>`+(ev.length?`<table>`+ev.map(e=>`<tr><td>${e.created.replace('T',' ')}</td><td><span class="rate" style="background:${rc(e.output.final.score/10)}">${f1(e.output.final.score)}</span> ${e.output.final.level_label}</td><td><a class="good" target="_blank" href="/evaluations/${e.id}/report.pdf">PDF</a></td></tr>`).join('')+'</table>':'<span class="mut">aucune évaluation enregistrée</span>')+`<h4>Gardiens similaires (cosinus, 15 variables)</h4><table>`+sim.map(s=>`<tr><td>${s.name}</td><td>${f2(s.distance)}</td></tr>`).join('')+'</table>'}
 async function loadProfiles(){const p=await api('/profiles?c=3');$('#profiles').innerHTML=`<div class="mut">Indice de partition FPC = ${f2(p.fpc)} (graine ${p.seed})</div>`+p.profiles.map((q,k)=>`<details><summary><b>${q.name}</b></summary>`+Object.entries(q.center).map(([i,v])=>`<div class="row"><span style="width:150px">${VARS[i].label}</span><div class="bar"><i style="width:${v*100}%"></i></div></div>`).join('')+'</details>').join('')}
 
 /* ---------- règles ---------- */
@@ -137,5 +169,7 @@ $('#btnSaveVar').onclick=async()=>{try{const r=await api(`/variables/${VSEL.id}`
 
 /* ---------- navigation ---------- */
 function show(s){document.querySelectorAll('main>section').forEach(e=>e.classList.toggle('hidden',e.id!=s));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.s==s));if(s=='rules'&&!RB)loadRbList();if(s=='vars'){loadVarList();if(!VSEL)selVar('reflexes')}if(s=='gks'){loadGks();loadProfiles()}}
-document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.s));init();
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.s));
+try{const t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+$('#theme').onclick=()=>{const d=document.documentElement.dataset.theme=='dark'?'light':'dark';document.documentElement.dataset.theme=d;try{localStorage.setItem('theme',d)}catch(e){}};init();
 </script></body></html>
