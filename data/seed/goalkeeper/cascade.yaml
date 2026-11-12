@@ -1,0 +1,32 @@
+nodes:
+- id: ss1
+  inputs: [reflexes, positionnement, plongeons, prise_balle]
+  output: sous_score_ss1
+  rulebase: ss1_arret_ligne
+- id: ss2
+  inputs: [jeu_aerien, efficacite_1v1, anticipation, detente]
+  output: sous_score_ss2
+  rulebase: ss2_surface_air
+- id: ss3
+  inputs: [jeu_pied, vitesse_reaction, prise_decision]
+  output: sous_score_ss3
+  rulebase: ss3_relance_jeu
+- id: ss4
+  inputs: [communication, concentration, mental, regularite]
+  output: sous_score_ss4
+  rulebase: ss4_mental
+- id: main
+  inputs: [sous_score_ss1, sous_score_ss2, sous_score_ss3, sous_score_ss4, age]
+  output: note_finale
+  rulebase: principal
+final: main
+parallel:
+- id: potential
+  inputs: [sous_score_ss1, sous_score_ss2, sous_score_ss3, sous_score_ss4, age]
+  output: potentiel
+  rulebase: potentiel
+- id: reliability
+  inputs: [minutes_played, league_visibility]
+  output: fiabilite
+  rulebase: fiabilite
+settings: {max_margin: 15.0}

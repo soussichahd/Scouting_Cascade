@@ -1,0 +1,410 @@
+rule_base: agilite
+version: 1
+gen:
+  weights: {}
+rules:
+- id: agilite-001
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-002
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-003
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-004
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: faible}
+  weight: 1.0
+  author: generator
+- id: agilite-005
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-006
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-007
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: faible}
+  weight: 1.0
+  author: generator
+- id: agilite-008
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: faible}
+  weight: 1.0
+  author: generator
+- id: agilite-009
+  if: {vitesse_chgt_dir: low, distance_deplacement: low, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-010
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-011
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-012
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-013
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-014
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-015
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-016
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: faible}
+  weight: 1.0
+  author: generator
+- id: agilite-017
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-018
+  if: {vitesse_chgt_dir: low, distance_deplacement: mid, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-019
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-020
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-021
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-022
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-023
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-024
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-025
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-026
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-027
+  if: {vitesse_chgt_dir: low, distance_deplacement: high, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-028
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-029
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-030
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-031
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-032
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-033
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-034
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: faible}
+  weight: 1.0
+  author: generator
+- id: agilite-035
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-036
+  if: {vitesse_chgt_dir: mid, distance_deplacement: low, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-037
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-038
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-039
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-040
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-041
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-042
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-043
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-044
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-045
+  if: {vitesse_chgt_dir: mid, distance_deplacement: mid, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-046
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-047
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-048
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-049
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-050
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-051
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-052
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-053
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-054
+  if: {vitesse_chgt_dir: mid, distance_deplacement: high, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-055
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-056
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-057
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-058
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-059
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-060
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-061
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-062
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-063
+  if: {vitesse_chgt_dir: high, distance_deplacement: low, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-064
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-065
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-066
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-067
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-068
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-069
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-070
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-071
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-072
+  if: {vitesse_chgt_dir: high, distance_deplacement: mid, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-073
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: fast, vitesse_max: low}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-074
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: fast, vitesse_max: mid}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-075
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: fast, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-076
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: mid, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-077
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: mid, vitesse_max: mid}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-078
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: mid, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator
+- id: agilite-079
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: slow, vitesse_max: low}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-080
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: slow, vitesse_max: mid}
+  then: {agilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: agilite-081
+  if: {vitesse_chgt_dir: high, distance_deplacement: high, temps_reaction: slow, vitesse_max: high}
+  then: {agilite: grande}
+  weight: 1.0
+  author: generator

@@ -1,0 +1,410 @@
+rule_base: ss4_mental
+version: 1
+gen:
+  weights: {communication: 0.25, concentration: 0.25, mental: 0.25, regularite: 0.25}
+rules:
+- id: ss4_mental-001
+  if: {communication: low, concentration: low, mental: low, regularite: low}
+  then: {sous_score_ss4: faible}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-002
+  if: {communication: low, concentration: low, mental: low, regularite: mid}
+  then: {sous_score_ss4: faible}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-003
+  if: {communication: low, concentration: low, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-004
+  if: {communication: low, concentration: low, mental: mid, regularite: low}
+  then: {sous_score_ss4: faible}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-005
+  if: {communication: low, concentration: low, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-006
+  if: {communication: low, concentration: low, mental: mid, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-007
+  if: {communication: low, concentration: low, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-008
+  if: {communication: low, concentration: low, mental: high, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-009
+  if: {communication: low, concentration: low, mental: high, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-010
+  if: {communication: low, concentration: mid, mental: low, regularite: low}
+  then: {sous_score_ss4: faible}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-011
+  if: {communication: low, concentration: mid, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-012
+  if: {communication: low, concentration: mid, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-013
+  if: {communication: low, concentration: mid, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-014
+  if: {communication: low, concentration: mid, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-015
+  if: {communication: low, concentration: mid, mental: mid, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-016
+  if: {communication: low, concentration: mid, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-017
+  if: {communication: low, concentration: mid, mental: high, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-018
+  if: {communication: low, concentration: mid, mental: high, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-019
+  if: {communication: low, concentration: high, mental: low, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-020
+  if: {communication: low, concentration: high, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-021
+  if: {communication: low, concentration: high, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-022
+  if: {communication: low, concentration: high, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-023
+  if: {communication: low, concentration: high, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-024
+  if: {communication: low, concentration: high, mental: mid, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-025
+  if: {communication: low, concentration: high, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-026
+  if: {communication: low, concentration: high, mental: high, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-027
+  if: {communication: low, concentration: high, mental: high, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-028
+  if: {communication: mid, concentration: low, mental: low, regularite: low}
+  then: {sous_score_ss4: faible}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-029
+  if: {communication: mid, concentration: low, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-030
+  if: {communication: mid, concentration: low, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-031
+  if: {communication: mid, concentration: low, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-032
+  if: {communication: mid, concentration: low, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-033
+  if: {communication: mid, concentration: low, mental: mid, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-034
+  if: {communication: mid, concentration: low, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-035
+  if: {communication: mid, concentration: low, mental: high, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-036
+  if: {communication: mid, concentration: low, mental: high, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-037
+  if: {communication: mid, concentration: mid, mental: low, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-038
+  if: {communication: mid, concentration: mid, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-039
+  if: {communication: mid, concentration: mid, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-040
+  if: {communication: mid, concentration: mid, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-041
+  if: {communication: mid, concentration: mid, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-042
+  if: {communication: mid, concentration: mid, mental: mid, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-043
+  if: {communication: mid, concentration: mid, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-044
+  if: {communication: mid, concentration: mid, mental: high, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-045
+  if: {communication: mid, concentration: mid, mental: high, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-046
+  if: {communication: mid, concentration: high, mental: low, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-047
+  if: {communication: mid, concentration: high, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-048
+  if: {communication: mid, concentration: high, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-049
+  if: {communication: mid, concentration: high, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-050
+  if: {communication: mid, concentration: high, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-051
+  if: {communication: mid, concentration: high, mental: mid, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-052
+  if: {communication: mid, concentration: high, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-053
+  if: {communication: mid, concentration: high, mental: high, regularite: mid}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-054
+  if: {communication: mid, concentration: high, mental: high, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-055
+  if: {communication: high, concentration: low, mental: low, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-056
+  if: {communication: high, concentration: low, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-057
+  if: {communication: high, concentration: low, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-058
+  if: {communication: high, concentration: low, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-059
+  if: {communication: high, concentration: low, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-060
+  if: {communication: high, concentration: low, mental: mid, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-061
+  if: {communication: high, concentration: low, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-062
+  if: {communication: high, concentration: low, mental: high, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-063
+  if: {communication: high, concentration: low, mental: high, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-064
+  if: {communication: high, concentration: mid, mental: low, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-065
+  if: {communication: high, concentration: mid, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-066
+  if: {communication: high, concentration: mid, mental: low, regularite: high}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-067
+  if: {communication: high, concentration: mid, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-068
+  if: {communication: high, concentration: mid, mental: mid, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-069
+  if: {communication: high, concentration: mid, mental: mid, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-070
+  if: {communication: high, concentration: mid, mental: high, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-071
+  if: {communication: high, concentration: mid, mental: high, regularite: mid}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-072
+  if: {communication: high, concentration: mid, mental: high, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-073
+  if: {communication: high, concentration: high, mental: low, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-074
+  if: {communication: high, concentration: high, mental: low, regularite: mid}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-075
+  if: {communication: high, concentration: high, mental: low, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-076
+  if: {communication: high, concentration: high, mental: mid, regularite: low}
+  then: {sous_score_ss4: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-077
+  if: {communication: high, concentration: high, mental: mid, regularite: mid}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-078
+  if: {communication: high, concentration: high, mental: mid, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-079
+  if: {communication: high, concentration: high, mental: high, regularite: low}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-080
+  if: {communication: high, concentration: high, mental: high, regularite: mid}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator
+- id: ss4_mental-081
+  if: {communication: high, concentration: high, mental: high, regularite: high}
+  then: {sous_score_ss4: grande}
+  weight: 1.0
+  author: generator

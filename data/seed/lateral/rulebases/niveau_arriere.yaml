@@ -1,0 +1,410 @@
+rule_base: niveau_arriere
+version: 1
+gen:
+  weights: {vitesse_max: 0.4, acceleration: 0.2, tacle: 0.25, agilite: 0.15}
+rules:
+- id: niveau_arriere-001
+  if: {vitesse_max: low, acceleration: faible, tacle: low, agilite: faible}
+  then: {niveau: niveau1}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-002
+  if: {vitesse_max: low, acceleration: faible, tacle: low, agilite: moyenne}
+  then: {niveau: niveau1}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-003
+  if: {vitesse_max: low, acceleration: faible, tacle: low, agilite: grande}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-004
+  if: {vitesse_max: low, acceleration: faible, tacle: mid, agilite: faible}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-005
+  if: {vitesse_max: low, acceleration: faible, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-006
+  if: {vitesse_max: low, acceleration: faible, tacle: mid, agilite: grande}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-007
+  if: {vitesse_max: low, acceleration: faible, tacle: high, agilite: faible}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-008
+  if: {vitesse_max: low, acceleration: faible, tacle: high, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-009
+  if: {vitesse_max: low, acceleration: faible, tacle: high, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-010
+  if: {vitesse_max: low, acceleration: moyenne, tacle: low, agilite: faible}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-011
+  if: {vitesse_max: low, acceleration: moyenne, tacle: low, agilite: moyenne}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-012
+  if: {vitesse_max: low, acceleration: moyenne, tacle: low, agilite: grande}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-013
+  if: {vitesse_max: low, acceleration: moyenne, tacle: mid, agilite: faible}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-014
+  if: {vitesse_max: low, acceleration: moyenne, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-015
+  if: {vitesse_max: low, acceleration: moyenne, tacle: mid, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-016
+  if: {vitesse_max: low, acceleration: moyenne, tacle: high, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-017
+  if: {vitesse_max: low, acceleration: moyenne, tacle: high, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-018
+  if: {vitesse_max: low, acceleration: moyenne, tacle: high, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-019
+  if: {vitesse_max: low, acceleration: grande, tacle: low, agilite: faible}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-020
+  if: {vitesse_max: low, acceleration: grande, tacle: low, agilite: moyenne}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-021
+  if: {vitesse_max: low, acceleration: grande, tacle: low, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-022
+  if: {vitesse_max: low, acceleration: grande, tacle: mid, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-023
+  if: {vitesse_max: low, acceleration: grande, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-024
+  if: {vitesse_max: low, acceleration: grande, tacle: mid, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-025
+  if: {vitesse_max: low, acceleration: grande, tacle: high, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-026
+  if: {vitesse_max: low, acceleration: grande, tacle: high, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-027
+  if: {vitesse_max: low, acceleration: grande, tacle: high, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-028
+  if: {vitesse_max: mid, acceleration: faible, tacle: low, agilite: faible}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-029
+  if: {vitesse_max: mid, acceleration: faible, tacle: low, agilite: moyenne}
+  then: {niveau: niveau2}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-030
+  if: {vitesse_max: mid, acceleration: faible, tacle: low, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-031
+  if: {vitesse_max: mid, acceleration: faible, tacle: mid, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-032
+  if: {vitesse_max: mid, acceleration: faible, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-033
+  if: {vitesse_max: mid, acceleration: faible, tacle: mid, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-034
+  if: {vitesse_max: mid, acceleration: faible, tacle: high, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-035
+  if: {vitesse_max: mid, acceleration: faible, tacle: high, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-036
+  if: {vitesse_max: mid, acceleration: faible, tacle: high, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-037
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: low, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-038
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: low, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-039
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: low, agilite: grande}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-040
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: mid, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-041
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-042
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: mid, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-043
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: high, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-044
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: high, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-045
+  if: {vitesse_max: mid, acceleration: moyenne, tacle: high, agilite: grande}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-046
+  if: {vitesse_max: mid, acceleration: grande, tacle: low, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-047
+  if: {vitesse_max: mid, acceleration: grande, tacle: low, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-048
+  if: {vitesse_max: mid, acceleration: grande, tacle: low, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-049
+  if: {vitesse_max: mid, acceleration: grande, tacle: mid, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-050
+  if: {vitesse_max: mid, acceleration: grande, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-051
+  if: {vitesse_max: mid, acceleration: grande, tacle: mid, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-052
+  if: {vitesse_max: mid, acceleration: grande, tacle: high, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-053
+  if: {vitesse_max: mid, acceleration: grande, tacle: high, agilite: moyenne}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-054
+  if: {vitesse_max: mid, acceleration: grande, tacle: high, agilite: grande}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-055
+  if: {vitesse_max: high, acceleration: faible, tacle: low, agilite: faible}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-056
+  if: {vitesse_max: high, acceleration: faible, tacle: low, agilite: moyenne}
+  then: {niveau: niveau3}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-057
+  if: {vitesse_max: high, acceleration: faible, tacle: low, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-058
+  if: {vitesse_max: high, acceleration: faible, tacle: mid, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-059
+  if: {vitesse_max: high, acceleration: faible, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-060
+  if: {vitesse_max: high, acceleration: faible, tacle: mid, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-061
+  if: {vitesse_max: high, acceleration: faible, tacle: high, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-062
+  if: {vitesse_max: high, acceleration: faible, tacle: high, agilite: moyenne}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-063
+  if: {vitesse_max: high, acceleration: faible, tacle: high, agilite: grande}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-064
+  if: {vitesse_max: high, acceleration: moyenne, tacle: low, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-065
+  if: {vitesse_max: high, acceleration: moyenne, tacle: low, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-066
+  if: {vitesse_max: high, acceleration: moyenne, tacle: low, agilite: grande}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-067
+  if: {vitesse_max: high, acceleration: moyenne, tacle: mid, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-068
+  if: {vitesse_max: high, acceleration: moyenne, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-069
+  if: {vitesse_max: high, acceleration: moyenne, tacle: mid, agilite: grande}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-070
+  if: {vitesse_max: high, acceleration: moyenne, tacle: high, agilite: faible}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-071
+  if: {vitesse_max: high, acceleration: moyenne, tacle: high, agilite: moyenne}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-072
+  if: {vitesse_max: high, acceleration: moyenne, tacle: high, agilite: grande}
+  then: {niveau: niveau6}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-073
+  if: {vitesse_max: high, acceleration: grande, tacle: low, agilite: faible}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-074
+  if: {vitesse_max: high, acceleration: grande, tacle: low, agilite: moyenne}
+  then: {niveau: niveau4}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-075
+  if: {vitesse_max: high, acceleration: grande, tacle: low, agilite: grande}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-076
+  if: {vitesse_max: high, acceleration: grande, tacle: mid, agilite: faible}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-077
+  if: {vitesse_max: high, acceleration: grande, tacle: mid, agilite: moyenne}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-078
+  if: {vitesse_max: high, acceleration: grande, tacle: mid, agilite: grande}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-079
+  if: {vitesse_max: high, acceleration: grande, tacle: high, agilite: faible}
+  then: {niveau: niveau5}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-080
+  if: {vitesse_max: high, acceleration: grande, tacle: high, agilite: moyenne}
+  then: {niveau: niveau6}
+  weight: 1.0
+  author: generator
+- id: niveau_arriere-081
+  if: {vitesse_max: high, acceleration: grande, tacle: high, agilite: grande}
+  then: {niveau: niveau6}
+  weight: 1.0
+  author: generator

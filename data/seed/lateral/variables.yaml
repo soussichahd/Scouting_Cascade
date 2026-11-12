@@ -1,0 +1,224 @@
+variables:
+- id: vitesse_max
+  label: Vitesse maximale
+  unit: km/h
+  range: [0, 45]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 20, 25]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [20, 25, 30, 35]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [30, 35, 45, 45]
+- id: tacle
+  label: Tacle
+  unit: '% réussite'
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Niveau national
+    shape: trapezoid
+    params: [0, 0, 60, 70]
+  - id: mid
+    label: Niveau professionnel
+    shape: trapezoid
+    params: [60, 70, 80, 90]
+  - id: high
+    label: Niveau international
+    shape: trapezoid
+    params: [80, 90, 100, 100]
+- id: vitesse_chgt_dir
+  label: Vitesse de changement de direction
+  unit: m/s
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 2, 4]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [2, 4, 6, 8]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+- id: distance_deplacement
+  label: Distance de déplacement (agilité)
+  unit: m
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 1, 2]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [1, 2, 4, 6]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [4, 6, 10, 10]
+- id: temps_reaction
+  label: Temps de réaction (agilité)
+  unit: s
+  range: [0, 0.6]
+  terms:
+  - id: fast
+    label: Rapide
+    shape: trapezoid
+    params: [0, 0, 0.1, 0.2]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [0.1, 0.2, 0.3, 0.4]
+  - id: slow
+    label: Lent
+    shape: trapezoid
+    params: [0.3, 0.4, 0.6, 0.6]
+  inverted: true
+- id: acc_0_5
+  label: Accélération 0-5 m
+  unit: m/s²
+  range: [0, 8]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 1.5, 2.5]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [1.5, 2.5, 3.5, 4]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [3.5, 4, 8, 8]
+- id: acc_0_10
+  label: Accélération 0-10 m
+  unit: m/s²
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 2.5, 3.5]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [2.5, 3.5, 4.5, 6]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [4.5, 6, 10, 10]
+- id: temps_reaction_acc
+  label: Temps de réaction (accélération)
+  unit: s
+  range: [0, 0.6]
+  terms:
+  - id: fast
+    label: Rapide
+    shape: trapezoid
+    params: [0, 0, 0.09, 0.15]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [0.09, 0.15, 0.25, 0.4]
+  - id: slow
+    label: Lent
+    shape: trapezoid
+    params: [0.25, 0.4, 0.6, 0.6]
+  source: temps_reaction
+  inverted: true
+- id: distance_acc
+  label: Distance de déplacement (accélération)
+  unit: m
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 2, 4]
+  - id: mid
+    label: Moyen
+    shape: trapezoid
+    params: [2, 4, 6, 8]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  source: distance_deplacement
+- id: agilite
+  label: Agilité
+  unit: ''
+  range: [0, 10]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: moyenne
+    label: Moyenne
+    shape: trapezoid
+    params: [3, 5, 6, 8]
+  - id: grande
+    label: Grande
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  kind: output
+- id: acceleration
+  label: Accélération
+  unit: ''
+  range: [0, 10]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: moyenne
+    label: Moyenne
+    shape: trapezoid
+    params: [3, 5, 6, 8]
+  - id: grande
+    label: Grande
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  kind: output
+- id: niveau
+  label: Niveau
+  unit: /100
+  range: [0, 100]
+  terms:
+  - id: niveau1
+    label: Niveau 1
+    shape: triangle
+    params: [0, 0, 20]
+  - id: niveau2
+    label: Niveau 2
+    shape: triangle
+    params: [0, 20, 40]
+  - id: niveau3
+    label: Niveau 3
+    shape: triangle
+    params: [20, 40, 60]
+  - id: niveau4
+    label: Niveau 4
+    shape: triangle
+    params: [40, 60, 80]
+  - id: niveau5
+    label: Niveau 5
+    shape: triangle
+    params: [60, 80, 100]
+  - id: niveau6
+    label: Niveau 6
+    shape: triangle
+    params: [80, 100, 100]
+  kind: output

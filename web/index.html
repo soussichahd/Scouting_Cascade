@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scouting Gardien – SIF Mamdani</title>
+<style>
+:root{--navy:#0B1F3A;--navy2:#13294B;--navy3:#1C3760;--ink:#E8EEF8;--mut:#9FB3CF;--good:#2EC4B6;--warn:#E9B949;--bad:#FF7A59;--line:#2A4570}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--ink);font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif;min-width:1280px}
+header{display:flex;align-items:center;gap:24px;padding:10px 20px;background:var(--navy2);border-bottom:1px solid var(--line)}
+header h1{font-size:16px;margin:0;color:var(--good)}nav button{background:none;border:0;color:var(--mut);font:inherit;padding:8px 14px;cursor:pointer;border-bottom:2px solid transparent}
+nav button.on{color:#fff;border-color:var(--good)}main{padding:16px 20px}.grid{display:grid;gap:16px}
+.card{background:var(--navy2);border:1px solid var(--line);border-radius:8px;padding:14px}.card h3{margin:0 0 10px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+label{display:block;color:var(--mut);font-size:12px}input,select,button.b{background:var(--navy);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:5px 8px;font:inherit}
+button.b{cursor:pointer;background:var(--navy3)}button.b.pri{background:var(--good);color:#04202a;border-color:var(--good);font-weight:600}button.b.del{color:var(--bad)}
+.slider{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;margin:3px 0}.slider input[type=range]{width:100%;accent-color:var(--good)}
+.big{font-size:44px;font-weight:700}.lvl{font-size:20px;font-weight:600}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mut{color:var(--mut)}
+.bar{height:10px;background:var(--navy);border-radius:5px;overflow:hidden;flex:1}.bar>i{display:block;height:100%;background:var(--good)}
+.row{display:flex;align-items:center;gap:8px;margin:3px 0}table{border-collapse:collapse;width:100%}td,th{padding:3px 6px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--mut);font-weight:500}
+details{margin:4px 0}summary{cursor:pointer}svg text{fill:var(--mut);font-size:10px}.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;border:1px solid currentColor}
+.scroll{max-height:520px;overflow:auto}.hidden{display:none}.comment{border-left:3px solid var(--good);padding-left:10px}
+</style></head><body>
+<header><h1>⚽ Scouting Gardien · SIF Mamdani en cascade</h1>
+<nav id="nav"><button data-s="eval" class="on">3 · Évaluation</button><button data-s="rules">1 · Règles</button><button data-s="vars">2 · Variables</button><button data-s="gks">Gardiens</button></nav>
+<span class="mut" id="ver" style="margin-left:auto"></span></header>
+<main>
+<section id="eval" class="grid" style="grid-template-columns:480px 1fr">
+ <div class="card"><h3>Saisie</h3>
+  <div class="row"><select id="gkSel" style="flex:1"></select><button class="b" id="btnLoad">Charger</button></div>
+  <div id="sliders"></div>
+  <div class="row" style="margin-top:10px"><button class="b pri" id="btnSave">Enregistrer l'évaluation</button><a id="pdfLink" class="hidden good" target="_blank">📄 Rapport PDF</a></div>
+  <div id="msg" class="bad"></div></div>
+ <div class="grid">
+  <div class="grid" style="grid-template-columns:1fr 1fr"><div class="card"><h3>Résultat</h3><div id="score"></div><div id="degs"></div><div id="rel"></div></div>
+   <div class="card"><h3>Radar</h3><div style="display:flex;gap:10px"><div id="radar4"></div><div id="radar15"></div></div></div></div>
+  <div class="card"><h3>Commentaire du scout</h3><div id="comment" class="comment"></div></div>
+  <div class="card"><h3>« Et si… » (sensibilité)</h3><div class="row"><select id="sensVar"></select><label>variation</label><input id="sensDelta" type="number" value="5" style="width:80px"><button class="b" id="btnSens">Simuler</button></div><div id="sensOut"></div></div>
+  <div class="card"><h3>Traceur de Mamdani</h3><div id="trace"></div></div></div>
+</section>
+<section id="rules" class="hidden"><div class="grid" style="grid-template-columns:1fr 380px">
+ <div class="card"><h3>Éditeur de règles</h3>
+  <div class="row"><select id="rbSel"></select><label>version</label><select id="rbVer"></select><input id="ruleFilter" placeholder="filtrer…"><button class="b" id="btnAddRule">+ règle</button></div>
+  <div id="rbCheck" class="row"></div><div class="scroll" id="ruleTable"></div>
+  <div class="row" style="margin-top:8px"><input id="rbComment" placeholder="commentaire de version" style="flex:1"><button class="b pri" id="btnSaveRb">Enregistrer (nouvelle version)</button></div><div id="rbMsg"></div></div>
+ <div class="grid"><div class="card"><h3>Générer depuis des poids</h3><div id="genW"></div><button class="b" id="btnGen">Générer la base</button></div>
+  <div class="card"><h3>Versions & test A/B</h3><div id="verList"></div><div class="row"><select id="abA"></select><select id="abB"></select><button class="b" id="btnAB">Comparer A/B</button></div><div id="abOut" class="scroll" style="max-height:260px"></div></div></div></div></section>
+<section id="vars" class="hidden"><div class="grid" style="grid-template-columns:320px 1fr"><div class="card"><h3>Variables</h3><div id="varList" class="scroll"></div></div>
+ <div class="card"><h3 id="varTitle">Variable</h3><div id="varPlot"></div><div id="varWarn"></div><div id="varTerms"></div><div class="row"><button class="b pri" id="btnSaveVar">Enregistrer</button><span id="varMsg"></span></div></div></div></section>
+<section id="gks" class="hidden"><div class="grid" style="grid-template-columns:1fr 420px"><div class="card"><h3>Shortlist (clic = charger dans l'évaluation)</h3><div class="scroll" id="gkTable" style="max-height:640px"></div></div>
+ <div class="grid"><div class="card"><h3>Fiche & historique</h3><div id="gkInfo" class="mut">Sélectionner un gardien</div></div><div class="card"><h3>Profils types (FCM)</h3><div id="profiles"></div></div></div></div></section>
+</main>
+<script>
+const $=s=>document.querySelector(s),api=async(p,o)=>{const r=await fetch(p,o&&{method:o.m||'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(o.b)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.detail||r.statusText);return j};
+const f1=x=>(+x).toFixed(1),f2=x=>(+x).toFixed(2);
+function trap(x,p){if(p.length==3)p=[p[0],p[1],p[1],p[2]];const[a,b,c,d]=p;const up=b>a?(x-a)/(b-a):(x>=a?1:0),dn=d>c?(d-x)/(d-c):(x<=d?1:0);return Math.max(0,Math.min(1,up,dn))}
+const lvlCls=l=>l>=5?'good':l>=3?'warn':'bad',lvlIco=l=>l>=5?'▲':l>=3?'●':'▼';
+let META,VARS={},cur={},gks=[],curGk=null,lastEval=null,evalTimer;
+const EXTRA=['age','minutes_played','league_visibility'];
+function plot(v,w=560,h=170,markX=null,terms=null){const[lo,hi]=v.range,T=terms||v.terms,cols=['#FF7A59','#E9B949','#2EC4B6','#8FB8FF','#C79BFF','#FFB4D1'];let s=`<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="${w}" height="${h}" fill="none"/>`;const X=x=>30+(x-lo)/(hi-lo)*(w-45),Y=y=>h-25-y*(h-45);
+T.forEach((t,i)=>{let pts=[];for(let k=0;k<=200;k++){const x=lo+k/200*(hi-lo);pts.push(X(x)+','+Y(trap(x,t.params)))}s+=`<polyline points="${pts}" fill="none" stroke="${cols[i%6]}" stroke-width="2"/><text x="${X(t.params[Math.floor(t.params.length/2)])}" y="${Y(1)-4}" text-anchor="middle" style="fill:${cols[i%6]}">${t.label}</text>`});
+for(let k=0;k<=4;k++){const x=lo+k/4*(hi-lo);s+=`<text x="${X(x)}" y="${h-8}" text-anchor="middle">${+x.toFixed(2)}</text>`}
+if(markX!=null)s+=`<line x1="${X(markX)}" x2="${X(markX)}" y1="${Y(1)}" y2="${Y(0)}" stroke="#fff" stroke-dasharray="3"/>`;return s+'</svg>'}
+function radar(labels,vals,size=210){const n=labels.length,c=size/2,r=size/2-38;const P=(i,k)=>{const a=i/n*2*Math.PI-Math.PI/2;return[c+Math.cos(a)*r*k,c+Math.sin(a)*r*k]};let s=`<svg width="${size}" height="${size}">`;
+[.25,.5,.75,1].forEach(k=>s+=`<polygon points="${labels.map((_,i)=>P(i,k)).join(' ')}" fill="none" stroke="#2A4570"/>`);
+s+=`<polygon points="${vals.map((v,i)=>P(i,Math.max(0,Math.min(1,v))))}" fill="#2EC4B655" stroke="#2EC4B6" stroke-width="2"/>`;labels.forEach((l,i)=>{const[x,y]=P(i,1.2);s+=`<text x="${x}" y="${y}" text-anchor="middle" font-size="9">${l.slice(0,11)}</text>`});return s+'</svg>'}
+const norm=(v,x)=>{const t=(x-v.range[0])/(v.range[1]-v.range[0]);return v.inverted?1-t:t};
+
+/* ---------- init ---------- */
+async function init(){META=await api('/meta');const vs=await api('/variables');vs.variables.forEach(v=>VARS[v.id]=v);
+ $('#ver').textContent='versions : '+Object.entries(META.versions).map(([k,v])=>k+' v'+v).join(' · ');
+ buildSliders();await loadGks();await evaluate()}
+function buildSliders(){let h='';const groups=META.cascade.nodes.filter(n=>n.id!=META.cascade.final);
+ groups.forEach(n=>{h+=`<details open><summary><b>${VARS[n.output].label}</b></summary>`+n.inputs.map(sl).join('')+'</details>'});
+ h+='<details open><summary><b>Contexte</b></summary>'+EXTRA.map(sl).join('')+'</details>';$('#sliders').innerHTML=h;
+ $('#sensVar').innerHTML=META.inputs.filter(v=>!EXTRA.includes(v.id)).map(v=>`<option value="${v.id}">${v.label}</option>`).join('');
+ document.querySelectorAll('#sliders input').forEach(i=>i.oninput=e=>{const id=i.dataset.id;cur[id]=+i.value;document.querySelectorAll(`[data-id="${id}"]`).forEach(o=>{if(o!==i)o.value=i.value});clearTimeout(evalTimer);evalTimer=setTimeout(evaluate,120)})}
+function sl(id){const v=VARS[id],[lo,hi]=v.range,step=hi-lo<=1?0.01:hi-lo<=10?0.1:1;if(cur[id]==null)cur[id]=+((lo+hi)/2).toFixed(2);
+ return `<div class="slider"><span>${v.label}${v.inverted?' ↓':''}</span><input type="range" data-id="${id}" min="${lo}" max="${hi}" step="${step}" value="${cur[id]}"><input type="number" data-id="${id}" min="${lo}" max="${hi}" step="${step}" value="${cur[id]}" style="width:70px"></div>`}
+function setInputs(o){Object.assign(cur,o);document.querySelectorAll('#sliders input').forEach(i=>{if(cur[i.dataset.id]!=null)i.value=cur[i.dataset.id]})}
+function payload(extra={}){const inputs={};META.inputs.forEach(v=>inputs[v.id]=cur[v.id]);return{inputs,...extra}}
+
+/* ---------- évaluation ---------- */
+async function evaluate(){try{$('#msg').textContent='';const r=await api('/evaluations',{b:payload()});lastEval=r;render(r)}catch(e){$('#msg').textContent='⚠ '+e.message}}
+function render(r){const f=r.final,l=f.level;
+ $('#score').innerHTML=`<div class="big ${lvlCls(l)}">${f1(f.score)}<span class="mut" style="font-size:18px"> /100</span></div><div class="lvl ${lvlCls(l)}">${lvlIco(l)} ${f.level_label}</div>`;
+ const sub=Object.entries(r.subscores).map(([k,s])=>`<div class="row"><span style="width:170px">${VARS[k].label.replace('Sous-score ','')}</span><div class="bar"><i style="width:${s.value*10}%"></i></div><b>${f1(s.value)}</b></div>`).join('');
+ $('#degs').innerHTML='<div style="margin-top:10px">'+sub+'</div><div class="mut" style="margin-top:8px">Degrés d\'appartenance aux 6 niveaux :</div>'+Object.entries(f.degrees).map(([k,d])=>`<div class="row"><span style="width:70px">${k.replace('niveau','Niveau ')}</span><div class="bar"><i style="width:${d*100}%;background:var(--warn)"></i></div><span>${f2(d)}</span></div>`).join('');
+ const rel=r.reliability,ap=r.age_potential;$('#rel').innerHTML=`<div style="margin-top:8px"><b>Fiabilité</b> ${f2(rel.index)} <span class="tag ${rel.index>=.7?'good':rel.index>=.4?'warn':'bad'}">${rel.index>=.7?'✔ haute':rel.index>=.4?'● moyenne':'▼ faible'}</span> · note ± ${f1(rel.margin)} (${f1(Math.max(0,f.score-rel.margin))} – ${f1(Math.min(100,f.score+rel.margin))})<br><b>Valeur immédiate</b> ${f1(ap.immediate)} · <b>Potentiel futur</b> ${f1(ap.potential)}</div>`;
+ const sk=Object.keys(r.subscores);$('#radar4').innerHTML=radar(sk.map(k=>VARS[k].label.replace('Sous-score ','')),sk.map(k=>r.subscores[k].value/10));
+ const ins=META.inputs.filter(v=>!EXTRA.includes(v.id));$('#radar15').innerHTML=radar(ins.map(v=>v.label),ins.map(v=>norm(v,cur[v.id])),240);
+ $('#comment').textContent=r.comment;
+ $('#trace').innerHTML=Object.entries(r.trace).map(([nid,t])=>{const n=META.cascade.nodes.concat(META.cascade.parallel||[]).find(x=>x.id==nid);const out=VARS[n.output];
+  const deg=Object.entries(t.degrees).map(([vid,d])=>{const v=VARS[vid];const x=cur[v.source||v.id]??r.subscores[vid]?.value;return `<tr><td>${v.label}</td><td>${f2(x??0)}</td><td>${Object.entries(d).map(([k,m])=>`${v.terms.find(t=>t.id==k).label} <b>${f2(m)}</b>`).join(' · ')}</td></tr>`}).join('');
+  const fired=t.fired_rules.slice(0,8).map(x=>`<tr><td>${x.id}</td><td>SI ${Object.entries(x.if).map(([a,b])=>VARS[a].label+' = '+VARS[a].terms.find(t=>t.id==b).label).join(' ET ')}</td><td>→ ${out.terms.find(t=>t.id==Object.values(x.then)[0]).label}</td><td><b>${f2(x.strength)}</b></td></tr>`).join('');
+  const agg=`<svg width="460" height="110">${(()=>{const z=t.z,a=t.aggregated,[lo,hi]=out.range,X=v=>10+(v-lo)/(hi-lo)*440,Y=v=>100-v*90;return `<polygon points="${z.map((q,i)=>X(q)+','+Y(a[i]))} ${X(hi)},100 ${X(lo)},100" fill="#2EC4B655" stroke="#2EC4B6"/><line x1="${X(t.centroid)}" x2="${X(t.centroid)}" y1="5" y2="100" stroke="#fff" stroke-dasharray="3"/><text x="${X(t.centroid)+4}" y="14">centroïde ${f2(t.centroid)}</text>`})()}</svg>`;
+  return `<details ${nid==META.cascade.final?'open':''}><summary><b>${out.label}</b> → ${f2(t.centroid)} <span class="mut">(${t.fired_rules.length} règles activées)</span></summary><table><tr><th>Entrée</th><th>Valeur</th><th>Fuzzification</th></tr>${deg}</table><table><tr><th>Règle</th><th>Condition</th><th>Sortie</th><th>Force</th></tr>${fired}</table>${agg}</details>`}).join('')}
+$('#btnSave').onclick=async()=>{if(!curGk)return $('#msg').textContent='Choisir un gardien dans la liste, puis Charger.';try{const r=await api('/evaluations',{b:payload({goalkeeper_id:curGk,save:true})});$('#pdfLink').href=`/evaluations/${r.evaluation_id}/report.pdf`;$('#pdfLink').classList.remove('hidden');$('#msg').innerHTML='<span class="good">✔ Évaluation enregistrée (#'+r.evaluation_id+')</span>';showGk(curGk)}catch(e){$('#msg').textContent='⚠ '+e.message}};
+$('#btnLoad').onclick=()=>pickGk($('#gkSel').value);
+$('#btnSens').onclick=async()=>{const r=await api('/evaluations/sensitivity',{b:payload({variable:$('#sensVar').value,delta:+$('#sensDelta').value})});$('#sensOut').innerHTML=`<p>${VARS[r.variable].label} : ${f2(r.old_value)} → <b>${f2(r.new_value)}</b> · note ${f1(r.old_score)} → <b class="${r.delta_score>=0?'good':'bad'}">${f1(r.new_score)} (${r.delta_score>=0?'+':''}${f2(r.delta_score)})</b> · ${r.old_level} → ${r.new_level}<br><span class="mut">règles ajoutées : ${r.rules_added.length} · retirées : ${r.rules_removed.length}</span></p>`};
+
+/* ---------- gardiens ---------- */
+async function loadGks(){gks=await api('/goalkeepers');$('#gkSel').innerHTML=gks.map(g=>`<option value="${g.id}">${g.name} · ${f1(g.score)}</option>`).join('');
+ $('#gkTable').innerHTML=`<table><tr><th>Nom</th><th>Club</th><th>Âge</th><th>Note</th><th>Note expert</th></tr>`+gks.sort((a,b)=>b.score-a.score).map(g=>`<tr style="cursor:pointer" data-g="${g.id}"><td>${g.name}</td><td>${g.club}</td><td>${g.age}</td><td><b>${f1(g.score)}</b></td><td class="mut">${g.expert_note??'–'}</td></tr>`).join('')+'</table>';
+ document.querySelectorAll('[data-g]').forEach(t=>t.onclick=()=>{showGk(t.dataset.g)})}
+function pickGk(id){const g=gks.find(x=>x.id==id);curGk=id;$('#gkSel').value=id;setInputs({...g.stats,age:g.age,minutes_played:g.minutes_played,league_visibility:g.league_visibility});evaluate()}
+async function showGk(id){const g=gks.find(x=>x.id==id),ev=await api(`/goalkeepers/${id}/evaluations`),sim=await api('/goalkeepers/similar',{b:{goalkeeper_id:id,k:5}});
+ $('#gkInfo').innerHTML=`<b>${g.name}</b> · ${g.club} · ${g.age} ans<br><button class="b" onclick="pickGk('${id}');show('eval')">Évaluer ce gardien</button><h4>Historique</h4>`+(ev.length?`<table>`+ev.map(e=>`<tr><td>${e.created.replace('T',' ')}</td><td><b>${f1(e.output.final.score)}</b> ${e.output.final.level_label}</td><td><a class="good" target="_blank" href="/evaluations/${e.id}/report.pdf">PDF</a></td></tr>`).join('')+'</table>':'<span class="mut">aucune évaluation enregistrée</span>')+`<h4>Gardiens similaires (cosinus, 15 variables)</h4><table>`+sim.map(s=>`<tr><td>${s.name}</td><td>${f2(s.distance)}</td></tr>`).join('')+'</table>'}
+async function loadProfiles(){const p=await api('/profiles?c=3');$('#profiles').innerHTML=`<div class="mut">Indice de partition FPC = ${f2(p.fpc)} (graine ${p.seed})</div>`+p.profiles.map((q,k)=>`<details><summary><b>${q.name}</b></summary>`+Object.entries(q.center).map(([i,v])=>`<div class="row"><span style="width:150px">${VARS[i].label}</span><div class="bar"><i style="width:${v*100}%"></i></div></div>`).join('')+'</details>').join('')}
+
+/* ---------- règles ---------- */
+let RB=null,RBLIST=[];
+async function loadRbList(){RBLIST=await api('/rulebases');$('#rbSel').innerHTML=RBLIST.map(r=>`<option value="${r.id}">${r.id} (v${r.active_version}, ${r.n_rules})</option>`).join('');await loadRb()}
+async function loadRb(ver){const id=$('#rbSel').value;RB=await api(`/rulebases/${id}`+(ver?`?version=${ver}`:''));const vs=await api(`/rulebases/${id}/versions`);
+ $('#rbVer').innerHTML=vs.map(v=>`<option value="${v.version}">v${v.version}${v.active?' ★ active':''}</option>`).join('');$('#rbVer').value=RB.version;
+ $('#abA').innerHTML=$('#abB').innerHTML=vs.map(v=>`<option value="${v.version}">v${v.version}</option>`).join('');
+ $('#verList').innerHTML='<table>'+vs.map(v=>`<tr><td>v${v.version}</td><td>${v.author}</td><td class="mut">${v.comment||''}</td><td>${v.active?'<span class="tag good">✔ active</span>':`<button class="b" onclick="activate(${v.version})">activer</button>`}</td></tr>`).join('')+'</table>';
+ const w=RB.gen.weights||{};$('#genW').innerHTML=RB.inputs.map(i=>`<div class="row"><span style="width:200px">${VARS[i].label}</span><input type="number" step="0.05" min="0" data-w="${i}" value="${w[i]??1}" style="width:80px"></div>`).join('');drawRules()}
+function drawRules(){const c=RB.check,v=VARS,flt=$('#ruleFilter').value.toLowerCase();
+ $('#rbCheck').innerHTML=`<span class="tag ${c.coverage>=.9?'good':'warn'}">${c.coverage>=.9?'✔':'●'} couverture ${(c.coverage*100).toFixed(0)}% (${c.covered}/${c.total_combinations})</span><span class="tag ${c.conflicts.length?'bad':'good'}">${c.conflicts.length?'▼ '+c.conflicts.length+' conflit(s)':'✔ aucun conflit'}</span>`;
+ const out=VARS[RB.output];$('#ruleTable').innerHTML=`<table><tr><th>#</th>${RB.inputs.map(i=>`<th>${v[i].label}</th>`).join('')}<th>→ ${out.label}</th><th>poids</th><th>auteur</th><th></th></tr>`+RB.rules.map((r,k)=>({r,k})).filter(({r})=>!flt||JSON.stringify(r).toLowerCase().includes(flt)).map(({r,k})=>`<tr><td>${r.id}</td>${RB.inputs.map(i=>`<td><select data-k="${k}" data-i="${i}">${v[i].terms.map(t=>`<option value="${t.id}" ${r.if[i]==t.id?'selected':''}>${t.label}</option>`).join('')}</select></td>`).join('')}<td><select data-k="${k}" data-o="1">${out.terms.map(t=>`<option value="${t.id}" ${Object.values(r.then)[0]==t.id?'selected':''}>${t.label}</option>`).join('')}</select></td><td><input data-k="${k}" data-wt="1" type="number" step="0.1" min="0" value="${r.weight??1}" style="width:60px"></td><td class="${r.author=='expert'?'warn':'mut'}">${r.author}</td><td><button class="b del" data-del="${k}">✕</button></td></tr>`).join('')+'</table>';
+ document.querySelectorAll('#ruleTable select,#ruleTable input').forEach(e=>e.onchange=()=>{const r=RB.rules[+e.dataset.k];if(e.dataset.i)r.if[e.dataset.i]=e.value;else if(e.dataset.o)r.then={[RB.output]:e.value};else r.weight=+e.value;r.author='expert';e.closest('tr').children[RB.inputs.length+3].textContent='expert'});
+ document.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{RB.rules.splice(+b.dataset.del,1);drawRules()})}
+async function activate(v){await api(`/rulebases/${RB.id}/versions/${v}/activate`,{b:{}});await loadRbList();$('#rbSel').value=RB.id;await loadRb()}
+$('#rbSel').onchange=()=>loadRb();$('#rbVer').onchange=()=>loadRb($('#rbVer').value);$('#ruleFilter').oninput=drawRules;
+$('#btnAddRule').onclick=()=>{const i={};RB.inputs.forEach(x=>i[x]=VARS[x].terms[0].id);RB.rules.unshift({id:RB.id+'-new'+Date.now()%10000,if:i,then:{[RB.output]:VARS[RB.output].terms[0].id},weight:1,author:'expert'});drawRules()};
+$('#btnSaveRb').onclick=async()=>{try{const r=await api(`/rulebases/${RB.id}`,{m:'PUT',b:{rules:RB.rules,gen:RB.gen,author:'expert',comment:$('#rbComment').value||'modification manuelle'}});$('#rbMsg').innerHTML=`<span class="good">✔ version ${r.version} créée et activée · couverture ${(r.check.coverage*100).toFixed(0)}% · ${r.check.conflicts.length} conflit(s)</span>`;META.versions=(await api('/meta')).versions;$('#ver').textContent='versions : '+Object.entries(META.versions).map(([k,v])=>k+' v'+v).join(' · ');await loadRb();evaluate()}catch(e){$('#rbMsg').innerHTML='<span class="bad">⚠ '+e.message+'</span>'}};
+$('#btnGen').onclick=async()=>{const weights={};document.querySelectorAll('[data-w]').forEach(i=>weights[i.dataset.w]=+i.value);const r=await api('/rulebases/generate',{b:{rulebase:RB.id,weights,ranks:RB.gen.ranks||{}}});RB.rules=r.rules;RB.gen=r.gen;RB.check=r.check;drawRules();$('#rbMsg').innerHTML='<span class="warn">Base générée (non enregistrée) — vérifier puis « Enregistrer ».</span>'};
+$('#btnAB').onclick=async()=>{const r=await api('/ab-tests',{b:{rulebase:RB.id,version_a:+$('#abA').value,version_b:+$('#abB').value}});$('#abOut').innerHTML=`<div>Écart moyen absolu : <b>${f2(r.mean_abs_delta)}</b> · <a class="good" href="/ab-tests/${r.id}/csv">export CSV</a></div><table><tr><th>Gardien</th><th>A</th><th>B</th><th>Δ</th><th>règles ≠</th></tr>`+r.rows.filter(x=>Math.abs(x.delta)>.001).concat(r.rows.filter(x=>Math.abs(x.delta)<=.001).slice(0,3)).map(x=>`<tr><td>${x.name}</td><td>${f1(x.score_a)}</td><td>${f1(x.score_b)}</td><td class="${x.delta>0?'good':x.delta<0?'bad':'mut'}">${x.delta>0?'▲ +':x.delta<0?'▼ ':'= '}${f2(x.delta)}</td><td>${x.rules_differ.length}</td></tr>`).join('')+'</table>'};
+
+/* ---------- variables ---------- */
+let VSEL=null;
+function loadVarList(){$('#varList').innerHTML=Object.values(VARS).map(v=>`<div class="row"><button class="b" style="width:100%;text-align:left" data-v="${v.id}">${v.label} <span class="mut">${v.unit||''}</span></button></div>`).join('');document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>selVar(b.dataset.v))}
+function selVar(id){VSEL=JSON.parse(JSON.stringify(VARS[id]));$('#varTitle').textContent=`${VSEL.label} (${VSEL.range[0]}–${VSEL.range[1]} ${VSEL.unit||''})`;drawVar()}
+function warns(v){const w=[],[lo,hi]=v.range;v.terms.forEach(t=>{for(let i=0;i<t.params.length-1;i++)if(t.params[i]>t.params[i+1]){w.push(['bad','▼ '+t.label+' : sommets non ordonnés']);break}});if(!w.length){let hole=null;for(let k=0;k<=1000;k++){const x=lo+k/1000*(hi-lo);if(Math.max(...v.terms.map(t=>trap(x,t.params)))<=0){hole=x;break}}if(hole!=null)w.push(['warn','● trou de couverture vers '+hole.toFixed(2)]);
+ const o=[...v.terms].sort((a,b)=>a.params.reduce((s,x)=>s+x)/a.params.length-b.params.reduce((s,x)=>s+x)/b.params.length);for(let i=0;i<o.length-1;i++){let ov=false;for(let k=0;k<=1000;k++){const x=lo+k/1000*(hi-lo);if(trap(x,o[i].params)>0&&trap(x,o[i+1].params)>0){ov=true;break}}if(!ov)w.push(['warn',`● perte d'incertitude : ${o[i].label} / ${o[i+1].label} ne se recouvrent pas`])}}return w}
+function drawVar(){const v=VSEL;$('#varPlot').innerHTML=plot(v,640,200,v.id in cur?cur[v.source||v.id]:null);const w=warns(v);$('#varWarn').innerHTML=w.length?w.map(([c,t])=>`<div class="${c}">${t}</div>`).join(''):'<div class="good">✔ sommets ordonnés, couverture complète, recouvrements présents</div>';
+ const step=(v.range[1]-v.range[0])/200;$('#varTerms').innerHTML=v.terms.map((t,ti)=>`<div style="margin-top:8px"><b>${t.label}</b> <span class="mut">${t.shape}</span>`+t.params.map((p,pi)=>`<div class="slider"><span>${'abcd'[pi]}</span><input type="range" data-t="${ti}" data-p="${pi}" min="${v.range[0]}" max="${v.range[1]}" step="${step}" value="${p}"><span>${(+p).toFixed(3).replace(/\.?0+$/,'')}</span></div>`).join('')+'</div>').join('');
+ document.querySelectorAll('#varTerms input').forEach(i=>i.oninput=()=>{VSEL.terms[+i.dataset.t].params[+i.dataset.p]=+i.value;drawVar()})}
+$('#btnSaveVar').onclick=async()=>{try{const r=await api(`/variables/${VSEL.id}`,{m:'PUT',b:{...VSEL,comment:'édition UI'}});VARS[VSEL.id]=VSEL;$('#varMsg').innerHTML=`<span class="good">✔ version ${r.version} enregistrée</span>`;META.versions=(await api('/meta')).versions;evaluate()}catch(e){$('#varMsg').innerHTML='<span class="bad">⚠ '+e.message+'</span>'}};
+
+/* ---------- navigation ---------- */
+function show(s){document.querySelectorAll('main>section').forEach(e=>e.classList.toggle('hidden',e.id!=s));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.s==s));if(s=='rules'&&!RB)loadRbList();if(s=='vars'){loadVarList();if(!VSEL)selVar('reflexes')}if(s=='gks'){loadGks();loadProfiles()}}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.s));init();
+</script></body></html>

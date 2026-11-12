@@ -1,0 +1,410 @@
+rule_base: ss1_arret_ligne
+version: 1
+gen:
+  weights: {reflexes: 0.35, positionnement: 0.25, plongeons: 0.2, prise_balle: 0.2}
+rules:
+- id: ss1_arret_ligne-001
+  if: {reflexes: low, positionnement: low, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-002
+  if: {reflexes: low, positionnement: low, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-003
+  if: {reflexes: low, positionnement: low, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-004
+  if: {reflexes: low, positionnement: low, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-005
+  if: {reflexes: low, positionnement: low, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-006
+  if: {reflexes: low, positionnement: low, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-007
+  if: {reflexes: low, positionnement: low, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-008
+  if: {reflexes: low, positionnement: low, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-009
+  if: {reflexes: low, positionnement: low, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-010
+  if: {reflexes: low, positionnement: mid, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-011
+  if: {reflexes: low, positionnement: mid, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-012
+  if: {reflexes: low, positionnement: mid, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-013
+  if: {reflexes: low, positionnement: mid, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-014
+  if: {reflexes: low, positionnement: mid, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-015
+  if: {reflexes: low, positionnement: mid, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-016
+  if: {reflexes: low, positionnement: mid, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-017
+  if: {reflexes: low, positionnement: mid, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-018
+  if: {reflexes: low, positionnement: mid, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-019
+  if: {reflexes: low, positionnement: high, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-020
+  if: {reflexes: low, positionnement: high, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-021
+  if: {reflexes: low, positionnement: high, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-022
+  if: {reflexes: low, positionnement: high, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-023
+  if: {reflexes: low, positionnement: high, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-024
+  if: {reflexes: low, positionnement: high, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-025
+  if: {reflexes: low, positionnement: high, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-026
+  if: {reflexes: low, positionnement: high, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-027
+  if: {reflexes: low, positionnement: high, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-028
+  if: {reflexes: mid, positionnement: low, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: faible}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-029
+  if: {reflexes: mid, positionnement: low, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-030
+  if: {reflexes: mid, positionnement: low, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-031
+  if: {reflexes: mid, positionnement: low, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-032
+  if: {reflexes: mid, positionnement: low, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-033
+  if: {reflexes: mid, positionnement: low, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-034
+  if: {reflexes: mid, positionnement: low, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-035
+  if: {reflexes: mid, positionnement: low, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-036
+  if: {reflexes: mid, positionnement: low, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-037
+  if: {reflexes: mid, positionnement: mid, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-038
+  if: {reflexes: mid, positionnement: mid, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-039
+  if: {reflexes: mid, positionnement: mid, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-040
+  if: {reflexes: mid, positionnement: mid, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-041
+  if: {reflexes: mid, positionnement: mid, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-042
+  if: {reflexes: mid, positionnement: mid, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-043
+  if: {reflexes: mid, positionnement: mid, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-044
+  if: {reflexes: mid, positionnement: mid, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-045
+  if: {reflexes: mid, positionnement: mid, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-046
+  if: {reflexes: mid, positionnement: high, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-047
+  if: {reflexes: mid, positionnement: high, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-048
+  if: {reflexes: mid, positionnement: high, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-049
+  if: {reflexes: mid, positionnement: high, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-050
+  if: {reflexes: mid, positionnement: high, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-051
+  if: {reflexes: mid, positionnement: high, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-052
+  if: {reflexes: mid, positionnement: high, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-053
+  if: {reflexes: mid, positionnement: high, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-054
+  if: {reflexes: mid, positionnement: high, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-055
+  if: {reflexes: high, positionnement: low, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-056
+  if: {reflexes: high, positionnement: low, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-057
+  if: {reflexes: high, positionnement: low, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-058
+  if: {reflexes: high, positionnement: low, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-059
+  if: {reflexes: high, positionnement: low, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-060
+  if: {reflexes: high, positionnement: low, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-061
+  if: {reflexes: high, positionnement: low, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-062
+  if: {reflexes: high, positionnement: low, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-063
+  if: {reflexes: high, positionnement: low, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-064
+  if: {reflexes: high, positionnement: mid, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-065
+  if: {reflexes: high, positionnement: mid, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-066
+  if: {reflexes: high, positionnement: mid, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-067
+  if: {reflexes: high, positionnement: mid, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-068
+  if: {reflexes: high, positionnement: mid, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-069
+  if: {reflexes: high, positionnement: mid, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-070
+  if: {reflexes: high, positionnement: mid, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-071
+  if: {reflexes: high, positionnement: mid, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-072
+  if: {reflexes: high, positionnement: mid, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-073
+  if: {reflexes: high, positionnement: high, plongeons: low, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-074
+  if: {reflexes: high, positionnement: high, plongeons: low, prise_balle: mid}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-075
+  if: {reflexes: high, positionnement: high, plongeons: low, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-076
+  if: {reflexes: high, positionnement: high, plongeons: mid, prise_balle: low}
+  then: {sous_score_ss1: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-077
+  if: {reflexes: high, positionnement: high, plongeons: mid, prise_balle: mid}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-078
+  if: {reflexes: high, positionnement: high, plongeons: mid, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-079
+  if: {reflexes: high, positionnement: high, plongeons: high, prise_balle: low}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-080
+  if: {reflexes: high, positionnement: high, plongeons: high, prise_balle: mid}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator
+- id: ss1_arret_ligne-081
+  if: {reflexes: high, positionnement: high, plongeons: high, prise_balle: high}
+  then: {sous_score_ss1: grande}
+  weight: 1.0
+  author: generator

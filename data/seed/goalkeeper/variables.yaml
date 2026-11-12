@@ -1,0 +1,434 @@
+variables:
+- id: reflexes
+  label: Réflexes
+  unit: '% d''arrêts'
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 50, 60]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [50, 65, 80]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [70, 85, 100, 100]
+- id: positionnement
+  label: Positionnement
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 4, 5.5]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [4, 5.5, 7]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [5.5, 7.5, 10, 10]
+- id: prise_balle
+  label: Prise de balle
+  unit: '% bloqué'
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 40, 50]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [40, 60, 80]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [70, 85, 100, 100]
+- id: plongeons
+  label: Plongeons
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 4, 5]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [4, 5.5, 7]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 7.5, 10, 10]
+- id: jeu_aerien
+  label: Jeu aérien
+  unit: '% gagnés'
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 45, 60]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [45, 60, 75]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [65, 80, 100, 100]
+- id: efficacite_1v1
+  label: Efficacité 1v1
+  unit: '% arrêts'
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 30, 45]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [30, 50, 70]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [55, 75, 100, 100]
+- id: anticipation
+  label: Anticipation
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 4, 6]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [4, 6, 8]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+- id: detente
+  label: Détente / puissance
+  unit: cm
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 40, 50]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [40, 55, 70]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [60, 75, 100, 100]
+- id: jeu_pied
+  label: Jeu au pied
+  unit: '% passes'
+  range: [0, 100]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 55, 65]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [55, 70, 85]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [75, 85, 100, 100]
+- id: vitesse_reaction
+  label: Vitesse de réaction
+  unit: s
+  range: [0.1, 0.6]
+  terms:
+  - id: fast
+    label: Rapide
+    shape: trapezoid
+    params: [0.1, 0.1, 0.2, 0.3]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [0.2, 0.3, 0.4]
+  - id: slow
+    label: Lent
+    shape: trapezoid
+    params: [0.3, 0.45, 0.6, 0.6]
+  inverted: true
+- id: prise_decision
+  label: Prise de décision
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 4, 5.5]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [4, 5.5, 7.5]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+- id: communication
+  label: Communication
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [3, 5.5, 7]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 7.5, 10, 10]
+- id: concentration
+  label: Concentration
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 4, 6]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [4, 6, 8]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+- id: mental
+  label: Mental (clutch)
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 4, 5]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [4, 6, 8]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [7, 8.5, 10, 10]
+- id: regularite
+  label: Régularité
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 5, 6]
+  - id: mid
+    label: Moyen
+    shape: triangle
+    params: [5, 6.5, 8]
+  - id: high
+    label: Fort
+    shape: trapezoid
+    params: [7, 8.5, 10, 10]
+- id: age
+  label: Âge
+  unit: ans
+  range: [15, 45]
+  terms:
+  - id: jeune
+    label: Jeune
+    shape: trapezoid
+    params: [15, 15, 20, 25]
+  - id: confirme
+    label: Confirmé
+    shape: trapezoid
+    params: [20, 25, 30, 35]
+  - id: experimente
+    label: Expérimenté
+    shape: trapezoid
+    params: [30, 35, 45, 45]
+- id: minutes_played
+  label: Temps de jeu
+  unit: min
+  range: [0, 3000]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 500, 1200]
+  - id: moyen
+    label: Moyen
+    shape: trapezoid
+    params: [500, 1200, 1800, 2400]
+  - id: eleve
+    label: Élevé
+    shape: trapezoid
+    params: [1800, 2500, 3000, 3000]
+- id: league_visibility
+  label: Visibilité de la ligue
+  unit: score
+  range: [0, 10]
+  terms:
+  - id: low
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: mid
+    label: Moyenne
+    shape: triangle
+    params: [3, 5, 7]
+  - id: high
+    label: Haute
+    shape: trapezoid
+    params: [5, 7, 10, 10]
+- id: sous_score_ss1
+  label: Sous-score Arrêt et ligne
+  unit: ''
+  range: [0, 10]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: moyenne
+    label: Moyenne
+    shape: trapezoid
+    params: [3, 5, 6, 8]
+  - id: grande
+    label: Grande
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  kind: output
+- id: sous_score_ss2
+  label: Sous-score Surface et air
+  unit: ''
+  range: [0, 10]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: moyenne
+    label: Moyenne
+    shape: trapezoid
+    params: [3, 5, 6, 8]
+  - id: grande
+    label: Grande
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  kind: output
+- id: sous_score_ss3
+  label: Sous-score Relance et jeu
+  unit: ''
+  range: [0, 10]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: moyenne
+    label: Moyenne
+    shape: trapezoid
+    params: [3, 5, 6, 8]
+  - id: grande
+    label: Grande
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  kind: output
+- id: sous_score_ss4
+  label: Sous-score Mental et leadership
+  unit: ''
+  range: [0, 10]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 3, 5]
+  - id: moyenne
+    label: Moyenne
+    shape: trapezoid
+    params: [3, 5, 6, 8]
+  - id: grande
+    label: Grande
+    shape: trapezoid
+    params: [6, 8, 10, 10]
+  kind: output
+- id: note_finale
+  label: Note finale
+  unit: /100
+  range: [0, 100]
+  terms: &id001
+  - id: niveau1
+    label: Niveau 1
+    shape: triangle
+    params: [0, 0, 20]
+  - id: niveau2
+    label: Niveau 2
+    shape: triangle
+    params: [0, 20, 40]
+  - id: niveau3
+    label: Niveau 3
+    shape: triangle
+    params: [20, 40, 60]
+  - id: niveau4
+    label: Niveau 4
+    shape: triangle
+    params: [40, 60, 80]
+  - id: niveau5
+    label: Niveau 5
+    shape: triangle
+    params: [60, 80, 100]
+  - id: niveau6
+    label: Niveau 6
+    shape: triangle
+    params: [80, 100, 100]
+  kind: output
+- id: potentiel
+  label: Potentiel futur
+  unit: /100
+  range: [0, 100]
+  terms: *id001
+  kind: output
+- id: fiabilite
+  label: Indice de fiabilité
+  unit: ''
+  range: [0, 1]
+  terms:
+  - id: faible
+    label: Faible
+    shape: trapezoid
+    params: [0, 0, 0.3, 0.5]
+  - id: moyenne
+    label: Moyenne
+    shape: triangle
+    params: [0.3, 0.5, 0.7]
+  - id: haute
+    label: Haute
+    shape: trapezoid
+    params: [0.5, 0.7, 1, 1]
+  kind: output

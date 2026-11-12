@@ -1,0 +1,1265 @@
+rule_base: acceleration
+version: 1
+gen:
+  weights: {}
+rules:
+- id: acceleration-001
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-002
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-003
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-004
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-005
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-006
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-007
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-008
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-009
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-010
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-011
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-012
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-013
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-014
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-015
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-016
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-017
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-018
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-019
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-020
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-021
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-022
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-023
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-024
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-025
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-026
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-027
+  if: {vitesse_max: low, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-028
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-029
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-030
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-031
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-032
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-033
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-034
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-035
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-036
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-037
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-038
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-039
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-040
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-041
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-042
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-043
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-044
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-045
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-046
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-047
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-048
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-049
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-050
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-051
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-052
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-053
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-054
+  if: {vitesse_max: low, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-055
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-056
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-057
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-058
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-059
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-060
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-061
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-062
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-063
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-064
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-065
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-066
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-067
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-068
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-069
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-070
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-071
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-072
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-073
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-074
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-075
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-076
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-077
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-078
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-079
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-080
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-081
+  if: {vitesse_max: low, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-082
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-083
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-084
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-085
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-086
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-087
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-088
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-089
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-090
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-091
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-092
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-093
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-094
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-095
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-096
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-097
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-098
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-099
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-100
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-101
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-102
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-103
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-104
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-105
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-106
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-107
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-108
+  if: {vitesse_max: mid, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-109
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-110
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-111
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-112
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-113
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-114
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-115
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-116
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-117
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-118
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-119
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-120
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-121
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-122
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-123
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-124
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-125
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-126
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-127
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-128
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-129
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-130
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-131
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-132
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-133
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-134
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-135
+  if: {vitesse_max: mid, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-136
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-137
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-138
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-139
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-140
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-141
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-142
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-143
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-144
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-145
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-146
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-147
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-148
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-149
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-150
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-151
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-152
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-153
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-154
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-155
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-156
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-157
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-158
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-159
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-160
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-161
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-162
+  if: {vitesse_max: mid, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-163
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-164
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-165
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-166
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-167
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-168
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-169
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: faible}
+  weight: 1.0
+  author: generator
+- id: acceleration-170
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-171
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-172
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-173
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-174
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-175
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-176
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-177
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-178
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-179
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-180
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-181
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-182
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-183
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-184
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-185
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-186
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-187
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-188
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-189
+  if: {vitesse_max: high, acc_0_5: low, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-190
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-191
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-192
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-193
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-194
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-195
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-196
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-197
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-198
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: low, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-199
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-200
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-201
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: fast, distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-202
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-203
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-204
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-205
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-206
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-207
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: mid, temps_reaction_acc: slow, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-208
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-209
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-210
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-211
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-212
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-213
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-214
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-215
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-216
+  if: {vitesse_max: high, acc_0_5: mid, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-217
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-218
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-219
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-220
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-221
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-222
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-223
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-224
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-225
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: low, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-226
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-227
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-228
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-229
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-230
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-231
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: mid, distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-232
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-233
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-234
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: mid, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-235
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: low}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-236
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: mid}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-237
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: fast,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-238
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-239
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid,
+    distance_acc: mid}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-240
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: mid,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator
+- id: acceleration-241
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: low}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-242
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: mid}
+  then: {acceleration: moyenne}
+  weight: 1.0
+  author: generator
+- id: acceleration-243
+  if: {vitesse_max: high, acc_0_5: high, acc_0_10: high, temps_reaction_acc: slow,
+    distance_acc: high}
+  then: {acceleration: grande}
+  weight: 1.0
+  author: generator

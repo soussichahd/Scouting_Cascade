@@ -1,0 +1,410 @@
+rule_base: ss2_surface_air
+version: 1
+gen:
+  weights: {jeu_aerien: 0.3, efficacite_1v1: 0.35, anticipation: 0.2, detente: 0.15}
+rules:
+- id: ss2_surface_air-001
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: low, detente: low}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-002
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: low, detente: mid}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-003
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: low, detente: high}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-004
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: mid, detente: low}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-005
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-006
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-007
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: high, detente: low}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-008
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: high, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-009
+  if: {jeu_aerien: low, efficacite_1v1: low, anticipation: high, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-010
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: low, detente: low}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-011
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-012
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-013
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-014
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-015
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-016
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-017
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: high, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-018
+  if: {jeu_aerien: low, efficacite_1v1: mid, anticipation: high, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-019
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: low, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-020
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-021
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-022
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-023
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-024
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-025
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-026
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: high, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-027
+  if: {jeu_aerien: low, efficacite_1v1: high, anticipation: high, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-028
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: low, detente: low}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-029
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: low, detente: mid}
+  then: {sous_score_ss2: faible}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-030
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-031
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-032
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-033
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-034
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-035
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: high, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-036
+  if: {jeu_aerien: mid, efficacite_1v1: low, anticipation: high, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-037
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: low, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-038
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-039
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-040
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-041
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-042
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-043
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-044
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: high, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-045
+  if: {jeu_aerien: mid, efficacite_1v1: mid, anticipation: high, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-046
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: low, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-047
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-048
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-049
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-050
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-051
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: mid, detente: high}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-052
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-053
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: high, detente: mid}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-054
+  if: {jeu_aerien: mid, efficacite_1v1: high, anticipation: high, detente: high}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-055
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: low, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-056
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-057
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-058
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-059
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-060
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-061
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-062
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: high, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-063
+  if: {jeu_aerien: high, efficacite_1v1: low, anticipation: high, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-064
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: low, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-065
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-066
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: low, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-067
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: mid, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-068
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-069
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: mid, detente: high}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-070
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: high, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-071
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: high, detente: mid}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-072
+  if: {jeu_aerien: high, efficacite_1v1: mid, anticipation: high, detente: high}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-073
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: low, detente: low}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-074
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: low, detente: mid}
+  then: {sous_score_ss2: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-075
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: low, detente: high}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-076
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: mid, detente: low}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-077
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: mid, detente: mid}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-078
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: mid, detente: high}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-079
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: high, detente: low}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-080
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: high, detente: mid}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator
+- id: ss2_surface_air-081
+  if: {jeu_aerien: high, efficacite_1v1: high, anticipation: high, detente: high}
+  then: {sous_score_ss2: grande}
+  weight: 1.0
+  author: generator

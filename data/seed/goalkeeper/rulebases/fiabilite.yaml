@@ -1,0 +1,50 @@
+rule_base: fiabilite
+version: 1
+gen:
+  weights: {minutes_played: 0.6, league_visibility: 0.4}
+rules:
+- id: fiabilite-001
+  if: {minutes_played: faible, league_visibility: low}
+  then: {fiabilite: faible}
+  weight: 1.0
+  author: generator
+- id: fiabilite-002
+  if: {minutes_played: faible, league_visibility: mid}
+  then: {fiabilite: faible}
+  weight: 1.0
+  author: generator
+- id: fiabilite-003
+  if: {minutes_played: faible, league_visibility: high}
+  then: {fiabilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: fiabilite-004
+  if: {minutes_played: moyen, league_visibility: low}
+  then: {fiabilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: fiabilite-005
+  if: {minutes_played: moyen, league_visibility: mid}
+  then: {fiabilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: fiabilite-006
+  if: {minutes_played: moyen, league_visibility: high}
+  then: {fiabilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: fiabilite-007
+  if: {minutes_played: eleve, league_visibility: low}
+  then: {fiabilite: moyenne}
+  weight: 1.0
+  author: generator
+- id: fiabilite-008
+  if: {minutes_played: eleve, league_visibility: mid}
+  then: {fiabilite: haute}
+  weight: 1.0
+  author: generator
+- id: fiabilite-009
+  if: {minutes_played: eleve, league_visibility: high}
+  then: {fiabilite: haute}
+  weight: 1.0
+  author: generator

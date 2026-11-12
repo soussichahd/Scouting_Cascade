@@ -1,0 +1,1466 @@
+rule_base: potentiel
+version: 1
+gen:
+  weights: {sous_score_ss1: 0.22, sous_score_ss2: 0.18, sous_score_ss3: 0.15, sous_score_ss4: 0.15,
+    age: 0.3}
+  ranks:
+    age: {jeune: 1.0, confirme: 0.5, experimente: 0.0}
+rules:
+- id: potentiel-001
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-002
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-003
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau1}
+  weight: 1.0
+  author: generator
+- id: potentiel-004
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-005
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-006
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau1}
+  weight: 1.0
+  author: generator
+- id: potentiel-007
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-008
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-009
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-010
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-011
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-012
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau1}
+  weight: 1.0
+  author: generator
+- id: potentiel-013
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-014
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-015
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-016
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-017
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-018
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-019
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-020
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-021
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-022
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-023
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-024
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-025
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-026
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-027
+  if: {sous_score_ss1: faible, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-028
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-029
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-030
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau1}
+  weight: 1.0
+  author: generator
+- id: potentiel-031
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-032
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-033
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-034
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-035
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-036
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-037
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-038
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-039
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-040
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-041
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-042
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-043
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-044
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-045
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-046
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-047
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-048
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-049
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-050
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-051
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-052
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-053
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-054
+  if: {sous_score_ss1: faible, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-055
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-056
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-057
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-058
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-059
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-060
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-061
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-062
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-063
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-064
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-065
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-066
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-067
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-068
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-069
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-070
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-071
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-072
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-073
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-074
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-075
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-076
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-077
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-078
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-079
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-080
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-081
+  if: {sous_score_ss1: faible, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-082
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-083
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-084
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-085
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-086
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-087
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-088
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-089
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-090
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-091
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-092
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-093
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-094
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-095
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-096
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-097
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-098
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-099
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-100
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-101
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-102
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-103
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-104
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-105
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-106
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-107
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-108
+  if: {sous_score_ss1: moyenne, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-109
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-110
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-111
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-112
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-113
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-114
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-115
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-116
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-117
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-118
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: faible, age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-119
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: faible, age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-120
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: faible, age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-121
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: moyenne, age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-122
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: moyenne, age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-123
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: moyenne, age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-124
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: grande, age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-125
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: grande, age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-126
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: moyenne,
+    sous_score_ss4: grande, age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-127
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-128
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-129
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-130
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-131
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-132
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-133
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-134
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-135
+  if: {sous_score_ss1: moyenne, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-136
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-137
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-138
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-139
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-140
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-141
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-142
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-143
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-144
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-145
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-146
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-147
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-148
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-149
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-150
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-151
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-152
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-153
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-154
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-155
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-156
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-157
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-158
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-159
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-160
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-161
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-162
+  if: {sous_score_ss1: moyenne, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-163
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-164
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-165
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-166
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-167
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-168
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-169
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-170
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-171
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-172
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-173
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-174
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau2}
+  weight: 1.0
+  author: generator
+- id: potentiel-175
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-176
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-177
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-178
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-179
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-180
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-181
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-182
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-183
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-184
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-185
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-186
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-187
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-188
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-189
+  if: {sous_score_ss1: grande, sous_score_ss2: faible, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-190
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-191
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-192
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-193
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-194
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-195
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-196
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-197
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-198
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-199
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-200
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-201
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-202
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-203
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-204
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-205
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-206
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-207
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-208
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-209
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-210
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-211
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-212
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-213
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-214
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau6}
+  weight: 1.0
+  author: generator
+- id: potentiel-215
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-216
+  if: {sous_score_ss1: grande, sous_score_ss2: moyenne, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-217
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-218
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-219
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-220
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-221
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-222
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-223
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-224
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-225
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: faible, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-226
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-227
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-228
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau3}
+  weight: 1.0
+  author: generator
+- id: potentiel-229
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-230
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-231
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-232
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau6}
+  weight: 1.0
+  author: generator
+- id: potentiel-233
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-234
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: moyenne, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-235
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: jeune}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-236
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-237
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: faible,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-238
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: jeune}
+  then: {potentiel: niveau6}
+  weight: 1.0
+  author: generator
+- id: potentiel-239
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-240
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: moyenne,
+    age: experimente}
+  then: {potentiel: niveau4}
+  weight: 1.0
+  author: generator
+- id: potentiel-241
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: jeune}
+  then: {potentiel: niveau6}
+  weight: 1.0
+  author: generator
+- id: potentiel-242
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: confirme}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator
+- id: potentiel-243
+  if: {sous_score_ss1: grande, sous_score_ss2: grande, sous_score_ss3: grande, sous_score_ss4: grande,
+    age: experimente}
+  then: {potentiel: niveau5}
+  weight: 1.0
+  author: generator

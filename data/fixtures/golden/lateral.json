@@ -1,0 +1,158 @@
+[
+ {
+  "name": "lateral-1",
+  "inputs": {
+   "vitesse_chgt_dir": 6.229,
+   "distance_deplacement": 7.418,
+   "temps_reaction": 0.477,
+   "vitesse_max": 42.41,
+   "acc_0_5": 5.919,
+   "acc_0_10": 9.223,
+   "tacle": 2.901
+  },
+  "expected": 60.0
+ },
+ {
+  "name": "lateral-2",
+  "inputs": {
+   "vitesse_chgt_dir": 4.656,
+   "distance_deplacement": 9.434,
+   "temps_reaction": 0.389,
+   "vitesse_max": 40.541,
+   "acc_0_5": 0.906,
+   "acc_0_10": 4.691,
+   "tacle": 24.657
+  },
+  "expected": 60.0
+ },
+ {
+  "name": "lateral-3",
+  "inputs": {
+   "vitesse_chgt_dir": 5.438,
+   "distance_deplacement": 5.739,
+   "temps_reaction": 0.008,
+   "vitesse_max": 9.753,
+   "acc_0_5": 2.236,
+   "acc_0_10": 9.163,
+   "tacle": 76.573
+  },
+  "expected": 40.0
+ },
+ {
+  "name": "lateral-4",
+  "inputs": {
+   "vitesse_chgt_dir": 1.596,
+   "distance_deplacement": 7.971,
+   "temps_reaction": 0.083,
+   "vitesse_max": 27.785,
+   "acc_0_5": 1.014,
+   "acc_0_10": 0.018,
+   "tacle": 87.14
+  },
+  "expected": 60.0
+ },
+ {
+  "name": "lateral-5",
+  "inputs": {
+   "vitesse_chgt_dir": 2.095,
+   "distance_deplacement": 2.155,
+   "temps_reaction": 0.589,
+   "vitesse_max": 39.258,
+   "acc_0_5": 2.314,
+   "acc_0_10": 9.615,
+   "tacle": 53.922
+  },
+  "expected": 60.0
+ },
+ {
+  "name": "lateral-6",
+  "inputs": {
+   "vitesse_chgt_dir": 6.778,
+   "distance_deplacement": 2.048,
+   "temps_reaction": 0.565,
+   "vitesse_max": 31.079,
+   "acc_0_5": 7.733,
+   "acc_0_10": 8.937,
+   "tacle": 29.879
+  },
+  "expected": 45.1387
+ },
+ {
+  "name": "lateral-7",
+  "inputs": {
+   "vitesse_chgt_dir": 3.612,
+   "distance_deplacement": 1.66,
+   "temps_reaction": 0.087,
+   "vitesse_max": 2.931,
+   "acc_0_5": 2.411,
+   "acc_0_10": 6.031,
+   "tacle": 0.338
+  },
+  "expected": 20.0001
+ },
+ {
+  "name": "lateral-8",
+  "inputs": {
+   "vitesse_chgt_dir": 6.779,
+   "distance_deplacement": 3.379,
+   "temps_reaction": 0.186,
+   "vitesse_max": 36.833,
+   "acc_0_5": 3.846,
+   "acc_0_10": 3.158,
+   "tacle": 48.122
+  },
+  "expected": 60.0
+ },
+ {
+  "name": "lateral-9",
+  "inputs": {
+   "vitesse_chgt_dir": 7.047,
+   "distance_deplacement": 0.57,
+   "temps_reaction": 0.585,
+   "vitesse_max": 1.029,
+   "acc_0_5": 5.998,
+   "acc_0_10": 8.449,
+   "tacle": 1.807
+  },
+  "expected": 20.0001
+ },
+ {
+  "name": "lateral-10",
+  "inputs": {
+   "vitesse_chgt_dir": 7.877,
+   "distance_deplacement": 3.662,
+   "temps_reaction": 0.347,
+   "vitesse_max": 0.409,
+   "acc_0_5": 0.374,
+   "acc_0_10": 1.809,
+   "tacle": 95.518
+  },
+  "expected": 40.0
+ },
+ {
+  "name": "lateral-11",
+  "inputs": {
+   "vitesse_chgt_dir": 1.965,
+   "distance_deplacement": 7.557,
+   "temps_reaction": 0.558,
+   "vitesse_max": 42.392,
+   "acc_0_5": 2.755,
+   "acc_0_10": 3.548,
+   "tacle": 52.47
+  },
+  "expected": 60.0
+ },
+ {
+  "name": "lateral-12",
+  "inputs": {
+   "vitesse_chgt_dir": 7.756,
+   "distance_deplacement": 1.081,
+   "temps_reaction": 0.449,
+   "vitesse_max": 35.875,
+   "acc_0_5": 6.878,
+   "acc_0_10": 0.366,
+   "tacle": 94.58
+  },
+  "expected": 79.9999
+ }
+]

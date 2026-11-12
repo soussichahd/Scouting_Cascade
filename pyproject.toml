@@ -1,0 +1,8 @@
+[project]
+name = "scouting-cascade"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pyyaml", "fastapi", "uvicorn", "reportlab", "matplotlib", "httpx"]
+[tool.pytest.ini_options]
+pythonpath = ["engine/src", "."]
+testpaths = ["tests"]

@@ -1,0 +1,140 @@
+rule_base: ss3_relance_jeu
+version: 1
+gen:
+  weights: {jeu_pied: 0.4, vitesse_reaction: 0.3, prise_decision: 0.3}
+rules:
+- id: ss3_relance_jeu-001
+  if: {jeu_pied: low, vitesse_reaction: fast, prise_decision: low}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-002
+  if: {jeu_pied: low, vitesse_reaction: fast, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-003
+  if: {jeu_pied: low, vitesse_reaction: fast, prise_decision: high}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-004
+  if: {jeu_pied: low, vitesse_reaction: mid, prise_decision: low}
+  then: {sous_score_ss3: faible}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-005
+  if: {jeu_pied: low, vitesse_reaction: mid, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-006
+  if: {jeu_pied: low, vitesse_reaction: mid, prise_decision: high}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-007
+  if: {jeu_pied: low, vitesse_reaction: slow, prise_decision: low}
+  then: {sous_score_ss3: faible}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-008
+  if: {jeu_pied: low, vitesse_reaction: slow, prise_decision: mid}
+  then: {sous_score_ss3: faible}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-009
+  if: {jeu_pied: low, vitesse_reaction: slow, prise_decision: high}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-010
+  if: {jeu_pied: mid, vitesse_reaction: fast, prise_decision: low}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-011
+  if: {jeu_pied: mid, vitesse_reaction: fast, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-012
+  if: {jeu_pied: mid, vitesse_reaction: fast, prise_decision: high}
+  then: {sous_score_ss3: grande}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-013
+  if: {jeu_pied: mid, vitesse_reaction: mid, prise_decision: low}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-014
+  if: {jeu_pied: mid, vitesse_reaction: mid, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-015
+  if: {jeu_pied: mid, vitesse_reaction: mid, prise_decision: high}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-016
+  if: {jeu_pied: mid, vitesse_reaction: slow, prise_decision: low}
+  then: {sous_score_ss3: faible}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-017
+  if: {jeu_pied: mid, vitesse_reaction: slow, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-018
+  if: {jeu_pied: mid, vitesse_reaction: slow, prise_decision: high}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-019
+  if: {jeu_pied: high, vitesse_reaction: fast, prise_decision: low}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-020
+  if: {jeu_pied: high, vitesse_reaction: fast, prise_decision: mid}
+  then: {sous_score_ss3: grande}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-021
+  if: {jeu_pied: high, vitesse_reaction: fast, prise_decision: high}
+  then: {sous_score_ss3: grande}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-022
+  if: {jeu_pied: high, vitesse_reaction: mid, prise_decision: low}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-023
+  if: {jeu_pied: high, vitesse_reaction: mid, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-024
+  if: {jeu_pied: high, vitesse_reaction: mid, prise_decision: high}
+  then: {sous_score_ss3: grande}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-025
+  if: {jeu_pied: high, vitesse_reaction: slow, prise_decision: low}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-026
+  if: {jeu_pied: high, vitesse_reaction: slow, prise_decision: mid}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator
+- id: ss3_relance_jeu-027
+  if: {jeu_pied: high, vitesse_reaction: slow, prise_decision: high}
+  then: {sous_score_ss3: moyenne}
+  weight: 1.0
+  author: generator

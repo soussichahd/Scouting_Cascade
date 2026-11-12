@@ -1,0 +1,14 @@
+nodes:
+- id: agilite
+  inputs: [vitesse_chgt_dir, distance_deplacement, temps_reaction, vitesse_max]
+  output: agilite
+  rulebase: agilite
+- id: acceleration
+  inputs: [vitesse_max, acc_0_5, acc_0_10, temps_reaction_acc, distance_acc]
+  output: acceleration
+  rulebase: acceleration
+- id: main
+  inputs: [vitesse_max, acceleration, tacle, agilite]
+  output: niveau
+  rulebase: niveau_arriere
+final: main
