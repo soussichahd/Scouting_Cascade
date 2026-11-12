@@ -48,23 +48,36 @@ button.b.pri{background:var(--acc);border-color:var(--acc)}button.b.pri:hover{ba
 .attr{display:grid;grid-template-columns:150px 1fr 46px;gap:10px;align-items:center;margin:9px 0}.attr .track{height:8px;border-radius:5px;background:var(--soft);overflow:hidden}.attr .track i{display:block;height:100%;border-radius:5px}
 .attr b.rate{height:26px;min-width:40px;font-size:13px}
 tr[data-g]{cursor:pointer}
+
+body{font-size:16px}main{padding:28px 32px}.grid{gap:24px}.card{padding:26px;margin-bottom:20px}.card h3{margin-bottom:16px}
+.seg{display:inline-flex;background:var(--card);border-radius:12px;padding:4px;margin-bottom:20px;box-shadow:0 1px 2px rgba(20,30,60,.06)}
+.seg button{border:0;background:none;padding:9px 20px;border-radius:9px;font:inherit;font-weight:600;color:var(--mut);cursor:pointer}.seg button.on{background:var(--acc);color:#fff}
+.slider{margin:12px 0;grid-template-columns:130px 1fr 78px}details.grp{padding:12px 16px;margin:12px 0}details.grp>summary{font-size:15px;padding:4px 0}
+.attr{margin:18px 0}.hero .rate{min-width:120px;height:120px;font-size:48px}.kpi{gap:20px}.kpi>div{padding:16px 18px}.kpi b{font-size:22px;margin-top:4px}
+.comment{font-size:17px;line-height:1.75;padding:14px 20px}.hint{padding:12px 16px;line-height:1.55}
+td,th{padding:10px 12px}.row{gap:14px;margin:10px 0}
 </style></head><body>
-<header><h1>🧤 Scouting<span>Keeper</span></h1>
+<header><h1> Scouting<span>Keeper</span></h1>
 <nav id="nav"><button data-s="eval" class="on">3 · Évaluation</button><button data-s="rules">1 · Règles</button><button data-s="vars">2 · Variables</button><button data-s="gks">Gardiens</button></nav>
 <span id="ver"></span><button id="theme" title="Changer de thème">🌓</button></header>
 <main>
-<section id="eval" class="grid" style="grid-template-columns:480px 1fr">
- <div class="card"><h3>1 · Saisie des statistiques</h3><p class="hint">Choisissez un gardien puis cliquez <b>Charger</b>, ou déplacez les curseurs : le résultat se met à jour tout seul.</p>
+<section id="eval" class="grid" style="grid-template-columns:440px 1fr">
+ <div class="card" style="position:sticky;top:16px"><h3>1 · Saisie</h3>
   <div class="row"><select id="gkSel" style="flex:1"></select><button class="b" id="btnLoad">Charger</button></div>
+  <p class="hint">Ouvrez un groupe, déplacez les curseurs : le résultat se met à jour.</p>
   <div id="sliders"></div>
-  <div class="row" style="margin-top:10px"><button class="b pri" id="btnSave">Enregistrer l'évaluation</button><a id="pdfLink" class="hidden good" target="_blank">📄 Rapport PDF</a></div>
+  <div class="row" style="margin-top:14px"><button class="b pri" id="btnSave">Enregistrer l'évaluation</button><a id="pdfLink" class="hidden good" target="_blank">📄 Rapport PDF</a></div>
   <div id="msg" class="bad"></div></div>
- <div class="grid">
-  <div class="grid" style="grid-template-columns:1fr 1fr"><div class="card"><h3>2 · Résultat</h3><div id="score"></div><div id="degs"></div><div id="rel"></div></div>
-   <div class="card"><h3>Profil radar</h3><div class="mut" style="font-size:12px;margin-bottom:4px">Haut : 4 sous-scores · Bas : 15 variables (plus loin du centre = plus favorable)</div><div style="display:flex;flex-direction:column;align-items:center;gap:6px"><div id="radar4"></div><div id="radar15"></div></div></div></div>
-  <div class="card"><h3>Commentaire du scout</h3><div id="comment" class="comment"></div></div>
-  <div class="card"><h3>« Et si… » (sensibilité)</h3><div class="row"><select id="sensVar"></select><label>variation</label><input id="sensDelta" type="number" value="5" style="width:80px"><button class="b" id="btnSens">Simuler</button></div><div id="sensOut"></div></div>
-  <div class="card"><h3>Traceur de Mamdani — comment la note est calculée</h3><p class="hint">Pour chaque système : fuzzification des entrées → règles activées (force = minimum des degrés) → ensemble agrégé → centroïde.</p><div id="trace"></div></div></div>
+ <div>
+  <div class="seg" id="seg"><button data-p="p-sum" class="on">Résumé</button><button data-p="p-radar">Radar</button><button data-p="p-trace">Calcul détaillé</button><button data-p="p-sens">Et si… ?</button></div>
+  <div class="pane" id="p-sum"><div class="card"><div id="score"></div></div>
+   <div class="card"><h3>Sous-scores</h3><div id="degs"></div></div>
+   <div class="card"><h3>Fiabilité et potentiel</h3><div id="rel"></div></div>
+   <div class="card"><h3>Commentaire du scout</h3><div id="comment" class="comment"></div></div></div>
+  <div class="pane hidden" id="p-radar"><div class="card"><h3>Profil radar</h3><div class="mut" style="margin-bottom:8px">Plus loin du centre = plus favorable.</div><div style="display:flex;flex-wrap:wrap;justify-content:space-around;gap:20px"><div id="radar4"></div><div id="radar15"></div></div></div></div>
+  <div class="pane hidden" id="p-trace"><div class="card"><h3>Traceur de Mamdani</h3><p class="hint">Pour chaque système : fuzzification des entrées → règles activées (force = minimum des degrés) → ensemble agrégé → centroïde. Cliquez sur un système pour le déplier.</p><div id="trace"></div></div></div>
+  <div class="pane hidden" id="p-sens"><div class="card"><h3>« Et si… » (sensibilité)</h3><p class="hint">Que devient la note si une statistique change ?</p><div class="row"><select id="sensVar"></select><label>variation</label><input id="sensDelta" type="number" value="5" style="width:90px"><button class="b pri" id="btnSens">Simuler</button></div><div id="sensOut"></div></div></div>
+ </div>
 </section>
 <section id="rules" class="hidden"><div class="grid" style="grid-template-columns:1fr 380px">
  <div class="card"><h3>Éditeur de règles</h3><p class="hint">Modifiez une liste déroulante : la ligne passe en « expert ». <b>Enregistrer</b> crée une nouvelle version (l'ancienne est conservée) ; comparez ensuite avec le test A/B.</p>
@@ -99,8 +112,8 @@ async function init(){META=await api('/meta');const vs=await api('/variables');v
  $('#ver').textContent='versions : '+Object.entries(META.versions).map(([k,v])=>k+' v'+v).join(' · ');
  buildSliders();await loadGks();await evaluate()}
 function buildSliders(){let h='';const groups=META.cascade.nodes.filter(n=>n.id!=META.cascade.final);
- groups.forEach(n=>{h+=`<details class="grp" open><summary><b>${VARS[n.output].label}</b></summary>`+n.inputs.map(sl).join('')+'</details>'});
- h+='<details class="grp" open><summary><b>Contexte (âge, temps de jeu, ligue)</b></summary>'+EXTRA.map(sl).join('')+'</details>';$('#sliders').innerHTML=h;
+ groups.forEach(n=>{h+=`<details class="grp" name="g" ${n===groups[0]?"open":""}><summary><b>${VARS[n.output].label}</b></summary>`+n.inputs.map(sl).join('')+'</details>'});
+ h+='<details class="grp" name="g"><summary><b>Contexte (âge, temps de jeu, ligue)</b></summary>'+EXTRA.map(sl).join('')+'</details>';$('#sliders').innerHTML=h;
  $('#sensVar').innerHTML=META.inputs.filter(v=>!EXTRA.includes(v.id)).map(v=>`<option value="${v.id}">${v.label}</option>`).join('');
  document.querySelectorAll('#sliders input').forEach(i=>i.oninput=e=>{const id=i.dataset.id;cur[id]=+i.value;document.querySelectorAll(`[data-id="${id}"]`).forEach(o=>{if(o!==i)o.value=i.value});clearTimeout(evalTimer);evalTimer=setTimeout(evaluate,120)})}
 function sl(id){const v=VARS[id],[lo,hi]=v.range,step=hi-lo<=1?0.01:hi-lo<=10?0.1:1;if(cur[id]==null)cur[id]=+((lo+hi)/2).toFixed(2);
@@ -115,8 +128,8 @@ function render(r){const f=r.final,l=f.level;
  const sub=Object.entries(r.subscores).map(([k,s])=>`<div class="attr"><span>${VARS[k].label.replace('Sous-score ','')}</span><div class="track"><i style="width:${s.value*10}%;background:${rc(s.value)}"></i></div><b class="rate" style="background:${rc(s.value)}">${f1(s.value)}</b></div>`).join('');
  $('#degs').innerHTML='<div style="margin-top:16px">'+sub+'</div><div class="mut" style="margin:14px 0 4px">Appartenance aux 6 niveaux</div>'+Object.entries(f.degrees).map(([k,d])=>`<div class="row" style="margin:2px 0"><span style="width:70px;font-size:13px">${k.replace('niveau','Niveau ')}</span><div class="bar"><i style="width:${d*100}%;background:var(--acc)"></i></div><span style="font-size:13px">${f2(d)}</span></div>`).join('');
  const rel=r.reliability,ap=r.age_potential;$('#rel').innerHTML=`<div class="kpi"><div><span>Fiabilité</span><b>${f2(rel.index)} <span class="tag ${rel.index>=.7?'good':rel.index>=.4?'warn':'bad'}">${rel.index>=.7?'✔ haute':rel.index>=.4?'● moyenne':'▼ faible'}</span></b></div><div><span>Marge d\'incertitude</span><b>± ${f1(rel.margin)}</b></div><div><span>Valeur immédiate</span><b>${f1(ap.immediate)}</b></div><div><span>Potentiel futur</span><b>${f1(ap.potential)}</b></div></div>`;
- const sk=Object.keys(r.subscores);$('#radar4').innerHTML=radar(sk.map(k=>VARS[k].label.replace('Sous-score ','')),sk.map(k=>r.subscores[k].value/10),340);
- const ins=META.inputs.filter(v=>!EXTRA.includes(v.id));$('#radar15').innerHTML=radar(ins.map(v=>v.label),ins.map(v=>norm(v,cur[v.id])),400);
+ const sk=Object.keys(r.subscores);$('#radar4').innerHTML=radar(sk.map(k=>VARS[k].label.replace('Sous-score ','')),sk.map(k=>r.subscores[k].value/10),380);
+ const ins=META.inputs.filter(v=>!EXTRA.includes(v.id));$('#radar15').innerHTML=radar(ins.map(v=>v.label),ins.map(v=>norm(v,cur[v.id])),460);
  $('#comment').textContent=r.comment;
  $('#trace').innerHTML=Object.entries(r.trace).map(([nid,t])=>{const n=META.cascade.nodes.concat(META.cascade.parallel||[]).find(x=>x.id==nid);const out=VARS[n.output];
   const deg=Object.entries(t.degrees).map(([vid,d])=>{const v=VARS[vid];const x=cur[v.source||v.id]??r.subscores[vid]?.value;return `<tr><td>${v.label}</td><td>${f2(x??0)}</td><td>${Object.entries(d).map(([k,m])=>`${v.terms.find(t=>t.id==k).label} <b>${f2(m)}</b>`).join(' · ')}</td></tr>`}).join('');
@@ -167,6 +180,8 @@ function drawVar(){const v=VSEL;$('#varPlot').innerHTML=plot(v,640,200,v.id in c
  document.querySelectorAll('#varTerms input').forEach(i=>i.oninput=()=>{VSEL.terms[+i.dataset.t].params[+i.dataset.p]=+i.value;drawVar()})}
 $('#btnSaveVar').onclick=async()=>{try{const r=await api(`/variables/${VSEL.id}`,{m:'PUT',b:{...VSEL,comment:'édition UI'}});VARS[VSEL.id]=VSEL;$('#varMsg').innerHTML=`<span class="good">✔ version ${r.version} enregistrée</span>`;META.versions=(await api('/meta')).versions;evaluate()}catch(e){$('#varMsg').innerHTML='<span class="bad">⚠ '+e.message+'</span>'}};
 
+/* ---------- onglets de l'évaluation ---------- */
+document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#seg button').forEach(x=>x.classList.toggle('on',x==b));document.querySelectorAll('#eval .pane').forEach(p=>p.classList.toggle('hidden',p.id!=b.dataset.p))});
 /* ---------- navigation ---------- */
 function show(s){document.querySelectorAll('main>section').forEach(e=>e.classList.toggle('hidden',e.id!=s));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.s==s));if(s=='rules'&&!RB)loadRbList();if(s=='vars'){loadVarList();if(!VSEL)selVar('reflexes')}if(s=='gks'){loadGks();loadProfiles()}}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.s));
