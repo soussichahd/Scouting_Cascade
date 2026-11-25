@@ -40,11 +40,11 @@ header nav button.on::after{
   background:var(--green);border-radius:3px 3px 0 0;
 }
 header nav button i{margin-right:7px}
-#ver{margin-left:auto;color:#64748b;font-size:11px}
 
 /* ─── LAYOUT ─── */
 main{padding:24px 28px;max-width:1600px;margin:0 auto}
-.grid{display:grid;gap:18px}
+.grid{display:grid;gap:18px;min-width:0}
+.grid>*{min-width:0}
 section{display:none}
 section.active{display:block;animation:fadeSlideIn .35s ease both}
 
@@ -90,6 +90,21 @@ section.active{display:block;animation:fadeSlideIn .35s ease both}
 .welcome p{font-size:14px;line-height:1.6;opacity:.95}
 .welcome strong{font-weight:700}
 
+.version-card{
+  display:flex;align-items:flex-start;gap:16px;margin-bottom:18px;padding:16px 18px;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.version-card h3{
+  flex:0 0 auto;margin:3px 0 0;color:var(--muted);
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+}
+.version-list{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.version-chip{
+  padding:5px 10px;border:1px solid var(--border);border-radius:999px;
+  background:var(--surface2);color:var(--text);font-size:12px;font-weight:600;
+}
+
 /* ─── FORM ELEMENTS ─── */
 input,select{
   background:var(--surface2);color:var(--text);
@@ -98,8 +113,8 @@ input,select{
   transition:border-color .2s,box-shadow .2s;
 }
 input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-.slider{display:grid;grid-template-columns:140px 1fr 65px;gap:10px;align-items:center;margin:5px 0}
-.slider span:first-child{font-size:12px;color:var(--muted);font-weight:500}
+.slider{display:grid;grid-template-columns:minmax(0,140px) minmax(0,1fr) 65px;gap:10px;align-items:center;margin:5px 0}
+.slider span:first-child{min-width:0;overflow-wrap:anywhere;font-size:12px;color:var(--muted);font-weight:500}
 .slider input[type=range]{
   width:100%;accent-color:var(--accent);height:6px;
   -webkit-appearance:auto;cursor:pointer;
@@ -183,7 +198,10 @@ details>*:not(summary){padding:12px 14px}
 svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
 
 .row{display:flex;align-items:center;gap:8px;margin:5px 0;flex-wrap:wrap}
-.scroll{max-height:520px;overflow:auto}
+.scroll{max-width:100%;max-height:520px;overflow:auto;overscroll-behavior:contain}
+svg{max-width:100%;height:auto}
+th,td{overflow-wrap:anywhere;vertical-align:top}
+details>div{max-width:100%;overflow-x:auto}
 .hidden{display:none}
 .green{color:var(--green)}.orange{color:var(--orange)}.red{color:var(--red)}.muted{color:var(--muted)}
 .good{color:var(--green)}.warn{color:var(--orange)}.bad{color:var(--red)}
@@ -292,6 +310,45 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
 }
 .btn-reset:hover{background:var(--border);color:var(--text)}
 
+/* ─── RESPONSIVE LAYOUT ─── */
+.layout-eval{grid-template-columns:minmax(0,460px) minmax(0,1fr)}
+.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.layout-rules{grid-template-columns:minmax(0,1fr) minmax(280px,380px)}
+.layout-vars{grid-template-columns:minmax(0,300px) minmax(0,1fr)}
+.layout-gks{grid-template-columns:minmax(0,1fr) minmax(300px,420px)}
+input,select{min-width:0;max-width:100%}
+
+@media(max-width:1100px){
+  .layout-eval,.layout-rules,.layout-gks{grid-template-columns:minmax(0,1fr)}
+}
+
+@media(max-width:760px){
+  header{height:auto;min-height:60px;padding:12px 16px;flex-wrap:wrap;gap:10px 16px}
+  header .logo{font-size:15px}
+  header nav{width:100%;margin-left:0;flex-wrap:wrap;justify-content:stretch}
+  header nav button{flex:1 1 125px;padding:8px 10px}
+  main{padding:16px}
+  .layout-vars,.summary-grid{grid-template-columns:minmax(0,1fr)}
+  .welcome{padding:16px;align-items:flex-start}
+  .version-card{display:block}
+  .version-card h3{margin:0 0 10px}
+  .card{padding:16px}
+  .row{align-items:stretch}
+  .slider{grid-template-columns:minmax(0,1.1fr) minmax(56px,1.5fr) 56px;gap:8px}
+  .score-hero .number{font-size:clamp(38px,12vw,56px)}
+}
+
+@media(max-width:420px){
+  main{padding:12px}
+  .grid{gap:12px}
+  .card{padding:14px}
+  .welcome{gap:10px}
+  .welcome i{font-size:22px}
+  .btn{padding:8px 12px}
+  .row>*{max-width:100%}
+  .sw-box{flex-direction:column}
+}
+
 </style></head>
 <body>
 
@@ -303,7 +360,6 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
     <button data-s="vars"><i class="fa-solid fa-sliders"></i>Paramètres</button>
     <button data-s="gks"><i class="fa-solid fa-shirt"></i>Gardiens</button>
   </nav>
-  <span id="ver"></span>
 </header>
 
 <main>
@@ -313,7 +369,7 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
     <i class="fa-solid fa-wand-magic-sparkles"></i>
     <p><strong>Bienvenue !</strong> Choisissez un gardien ou ajustez les curseurs pour voir sa note globale. Le système analyse automatiquement 15 critères et vous donne un avis clair et détaillé.</p>
   </div>
-  <div class="grid" style="grid-template-columns:460px 1fr">
+  <div class="grid layout-eval">
     <div class="card">
       <h3><i class="fa-solid fa-hand-pointer"></i> Choisir un gardien</h3>
       <div class="row">
@@ -329,7 +385,7 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
       <div id="msg" style="margin-top:8px;font-size:13px"></div>
     </div>
     <div class="grid" style="gap:18px">
-      <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="grid summary-grid">
         <div class="card">
           <h3><i class="fa-solid fa-trophy"></i> Note globale</h3>
           <div id="score"></div>
@@ -371,7 +427,7 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
     <i class="fa-solid fa-scale-balanced"></i>
     <p><strong>Règles de décision.</strong> Modifiez les règles qui transforment les critères en notes. Chaque modification crée une nouvelle version que vous pouvez comparer.</p>
   </div>
-  <div class="grid" style="grid-template-columns:1fr 380px">
+  <div class="grid layout-rules">
     <div class="card">
       <h3><i class="fa-solid fa-pen-ruler"></i> Modifier les règles</h3>
       <div class="row">
@@ -415,7 +471,11 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
     <i class="fa-solid fa-sliders"></i>
     <p><strong>Paramètres avancés.</strong> Ajustez les fonctions qui transforment les valeurs brutes (réflexes, détente…) en niveaux (faible, moyen, excellent).</p>
   </div>
-  <div class="grid" style="grid-template-columns:300px 1fr">
+  <div class="version-card">
+    <h3><i class="fa-solid fa-code-branch"></i> Versions actives</h3>
+    <div id="ver" class="version-list" aria-live="polite"></div>
+  </div>
+  <div class="grid layout-vars">
     <div class="card">
       <h3><i class="fa-solid fa-list"></i> Liste des critères</h3>
       <div id="varList" class="scroll"></div>
@@ -439,7 +499,7 @@ svg text{fill:var(--muted);font-size:10px;font-family:'Inter',sans-serif}
     <i class="fa-solid fa-shirt"></i>
     <p><strong>Tous les gardiens.</strong> Parcourez la liste, consultez les fiches et cliquez sur un gardien pour l'évaluer.</p>
   </div>
-  <div class="grid" style="grid-template-columns:1fr 420px">
+  <div class="grid layout-gks">
     <div class="card">
       <h3><i class="fa-solid fa-ranking-star"></i> Classement</h3>
       <div class="search-bar">
@@ -519,6 +579,22 @@ const lvlBadge=l=>l>=5?'badge-green':l>=3?'badge-orange':'badge-red';
 const lvlIcon=l=>l>=5?'fa-circle-check':l>=3?'fa-circle-minus':'fa-circle-xmark';
 let META,VARS={},cur={},gks=[],curGk=null,lastEval=null,evalTimer,VSEL=null;
 const EXTRA=['age','minutes_played','league_visibility'];
+const VERSION_LABELS={
+  variables:'Paramètres',ss1_arret_ligne:'Arrêt et ligne',ss2_surface_air:'Surface et air',
+  ss3_relance_jeu:'Relance et jeu',ss4_mental:'Mental et leadership',
+  principal:'Note finale',potentiel:'Potentiel',fiabilite:'Fiabilité'
+};
+
+function renderVersions(){
+  const box=$('#ver');
+  box.replaceChildren();
+  Object.entries(META.versions).forEach(([id,version])=>{
+    const chip=document.createElement('span');
+    chip.className='version-chip';
+    chip.textContent=`${VERSION_LABELS[id]||id} · v${version}`;
+    box.append(chip);
+  });
+}
 
 /* ─── SVG CHARTS ─── */
 function plot(v,w=560,h=170,markX=null,terms=null){
@@ -552,7 +628,7 @@ async function init(){
   META=await api('/meta');                     // GET
   const vs=await api('/variables');            // GET
   vs.variables.forEach(v=>VARS[v.id]=v);
-  $('#ver').textContent=Object.entries(META.versions).map(([k,v])=>k+' v'+v).join(' · ');
+  renderVersions();
   buildSliders();
   await loadGks();
   await evaluate();
@@ -765,7 +841,7 @@ $('#btnSaveRb').onclick=async()=>{
     const r=await api(`/rulebases/${RB.id}`,{m:'PUT',b:{rules:RB.rules,gen:RB.gen,author:'expert',comment:$('#rbComment').value||'modification manuelle'}});
     $('#rbMsg').innerHTML=`<span class="good"><i class="fa-solid fa-circle-check"></i> Version ${r.version} créée — couverture ${(r.check.coverage*100).toFixed(0)}%, ${r.check.conflicts.length} conflit(s)</span>`;
     META.versions=(await api('/meta')).versions;
-    $('#ver').textContent=Object.entries(META.versions).map(([k,v])=>k+' v'+v).join(' · ');
+    renderVersions();
     await loadRb();evaluate();
   }catch(e){$('#rbMsg').innerHTML=`<span class="bad"><i class="fa-solid fa-triangle-exclamation"></i> ${e.message}</span>`}
 };
@@ -825,7 +901,7 @@ $('#btnSaveVar').onclick=async()=>{
     const r=await api(`/variables/${VSEL.id}`,{m:'PUT',b:{...VSEL,comment:'édition UI'}});
     VARS[VSEL.id]=VSEL;
     $('#varMsg').innerHTML=`<span class="good"><i class="fa-solid fa-circle-check"></i> Version ${r.version} sauvegardée</span>`;
-    META.versions=(await api('/meta')).versions;evaluate();
+    META.versions=(await api('/meta')).versions;renderVersions();evaluate();
   }catch(e){$('#varMsg').innerHTML=`<span class="bad"><i class="fa-solid fa-triangle-exclamation"></i> ${e.message}</span>`}
 };
 

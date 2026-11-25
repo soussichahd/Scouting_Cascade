@@ -1,18 +1,18 @@
-<<<<<<< HEAD
-# Scouting_Cascade
-=======
 # Scouting Gardien de But – SIF de Mamdani en cascade
 
 Outil d'aide à la décision : 15 critères → 4 sous-scores (SS1…SS4) → note finale /100 et Niveau 1–6, par un
 système d'inférence floue de Mamdani en cascade (approche du cas d'école « arrière latéral » de M. Ramdani & L. Machaa).
 
 ## Lancer (≈ 2 minutes)
-```bash
-pip install numpy pyyaml fastapi uvicorn reportlab matplotlib httpx pytest hypothesis
-cd scouting-cascade
-PYTHONPATH=engine/src:. python3 -m uvicorn api.app:app --port 8000 ou set PYTHONPATH=engine/src;. python -m uvicorn api.app:app --port 8000
-# puis ouvrir http://localhost:8000
-python3 -m pytest -q          # 27 tests
+Dans PowerShell, depuis le dossier du projet :
+```powershell
+python -m pip install numpy pyyaml fastapi uvicorn reportlab matplotlib httpx pytest hypothesis
+$env:PYTHONPATH = "engine\src;."
+python -m uvicorn api.app:app --host 127.0.0.1 --port 8000
+```
+Puis ouvrez http://127.0.0.1:8000 dans votre navigateur. Pour lancer les tests dans un autre terminal PowerShell :
+```powershell
+python -m pytest -q
 ```
 La base SQLite `data/app.db` est créée et alimentée au premier démarrage (règles/variables seed + 60 gardiens fictifs).
 Pour repartir de zéro : supprimer `data/app.db`.
@@ -43,4 +43,3 @@ Pour repartir de zéro : supprimer `data/app.db`.
 - Fiabilité : marge = 15 × (1 − indice) (à fixer avec l'expert). Âge : Confirmé > Expérimenté > Jeune pour la valeur immédiate, inversé pour le potentiel.
 - Valeurs d'or : calculées par une implémentation de référence **indépendante** (boucles pures) + 2 cas analytiques (centroïde 93,33 / 6,67) ; à compléter par des calculs manuels de l'expert. Pas de scikit-fuzzy (non installé).
 - Non fait : tests Playwright/Vitest, CI GitHub, ANFIS, import CSV, historique de variables dans l'UI, authentification.
->>>>>>> 6653251 (Initial commit)
