@@ -10,8 +10,7 @@ système d'inférence floue de Mamdani en cascade (approche du cas d'école « a
 ```bash
 pip install numpy pyyaml fastapi uvicorn reportlab matplotlib httpx pytest hypothesis
 cd scouting-cascade
-PYTHONPATH=engine/src:. python3 -m uvicorn api.app:app --port 8000 ou set PYTHONPATH=engine/src;.
-                                                                       python -m uvicorn api.app:app --port 8000
+PYTHONPATH=engine/src:. python3 -m uvicorn api.app:app --port 8000 ou set PYTHONPATH=engine/src;. python -m uvicorn api.app:app --port 8000
 # puis ouvrir http://localhost:8000
 python3 -m pytest -q          # 27 tests
 ```
